@@ -188,27 +188,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <span class="pill pill-dl hot">📅 27 мар</span>
     </div>
     <hr class="subtasks-divider">
-    <div class="progress-label">2/3 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:67%"></div></div>
+    <div class="progress-label">1/1 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
     <div class="sub sub-clickable" onclick="toggleSub(11)">
       <div class="checkbox checked"></div>
       <div class="sub-right">
         <span class="sub-text done">Выбрать дизайнера</span>
         <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(11)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(12)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Согласовать условия и отдать в работу</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(12)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(13)">
-      <div class="checkbox"></div>
-      <div class="sub-right">
-        <span class="sub-text">Утвердить финальную версию</span>
-        <span class="sub-owner">Both <span class="sub-del" onclick="event.stopPropagation();delSub(13)">✕</span></span>
       </div>
     </div>
     <div class="add-sub-row">
@@ -399,7 +385,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(3)">✏️ Изменить</button>
     </div>
     
-  <div class="inline-edit" id="ie_3">
+  <div class="inline-edit open" id="ie_3">
     <div class="ie-row">
       <span class="ie-label">Название</span>
       <input class="ie-input" id="ie_name_3" value="AI-система для планирования" onkeydown="if(event.key==='Enter')applyEdit(3)">
@@ -608,18 +594,6 @@ let TASKS = [
         "text": "Выбрать дизайнера",
         "done": true,
         "owner": "Ast"
-      },
-      {
-        "id": 12,
-        "text": "Согласовать условия и отдать в работу",
-        "done": true,
-        "owner": "Ast"
-      },
-      {
-        "id": 13,
-        "text": "Утвердить финальную версию",
-        "done": false,
-        "owner": "Both"
       }
     ]
   },
