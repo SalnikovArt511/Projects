@@ -116,7 +116,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="header">
   <div class="header-title">Tasks Board</div>
   <div class="header-actions">
-    <span class="save-status" id="saveStatus"></span>
+    <span class="save-status saving" id="saveStatus">Сохраняем…</span>
     <button class="btn" id="editBtn" onclick="toggleEdit()">✏️ Редактировать</button>
     <button class="btn primary" id="saveBtn" onclick="saveToGitHub()" disabled="">💾 Сохранить</button>
     <button class="btn" onclick="toggleGhBanner()" title="Настройки GitHub">⚙️</button>
@@ -124,7 +124,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 </div>
 
 <!-- GitHub config banner -->
-<div class="gh-banner" id="ghBanner">
+<div class="gh-banner visible" id="ghBanner">
   <div class="gh-banner-title">Настройки GitHub — заполни один раз</div>
   <div class="gh-row">
     <input class="gh-input" id="ghToken" placeholder="GitHub Token (ghp_...)" type="password">
