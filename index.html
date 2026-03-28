@@ -162,7 +162,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="board" id="board"><div class="col edit-mode" data-status="inprogress">
       <div class="col-header">
         <span class="col-title">🔄 In progress</span>
-        <span class="col-badge">3</span>
+        <span class="col-badge">2</span>
       </div>
       
       <div class="add-task-form">
@@ -333,7 +333,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(2)">Отмена</button>
     </div>
   </div>
-  </div><div class="card" data-priority="medium" id="card_3">
+  </div>
+    </div><div class="col edit-mode" data-status="inbox">
+      <div class="col-header">
+        <span class="col-title">📥 Inbox</span>
+        <span class="col-badge">1</span>
+      </div>
+      
+      <div class="add-task-form">
+        <input class="edit-input" id="nt_inbox" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('inbox')">
+        <div class="edit-row">
+          <select class="edit-select" id="np_inbox">
+            <option value="high">🔴 High</option>
+            <option value="medium" selected="">🟡 Medium</option>
+            <option value="low">⚪ Low</option>
+          </select>
+          <select class="edit-select" id="no_inbox">
+            <option value="Manager">Manager</option>
+            <option value="Assistant" selected="">Assistant</option>
+            <option value="Both">Both</option>
+          </select>
+          <input class="edit-input" id="nd_inbox" placeholder="дедлайн" style="margin:0;width:80px">
+        </div>
+        <button class="btn primary" onclick="addTask('inbox')">+ Задача</button>
+      </div><div class="card" data-priority="medium" id="card_3">
     <div class="card-name">AI-система для планирования</div>
     <div class="card-meta">
       <span class="pill pill-medium">Medium</span>
@@ -385,14 +408,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(3)">✏️ Изменить</button>
     </div>
     
-  <div class="inline-edit open" id="ie_3">
+  <div class="inline-edit" id="ie_3">
     <div class="ie-row">
       <span class="ie-label">Название</span>
       <input class="ie-input" id="ie_name_3" value="AI-система для планирования" onkeydown="if(event.key==='Enter')applyEdit(3)">
     </div>
     <div class="ie-row">
       <span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_3"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select>
+      <select class="ie-select" id="ie_st_3"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select>
     </div>
     <div class="ie-row">
       <span class="ie-label">Приоритет</span>
@@ -424,29 +447,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   </div>
   </div>
-    </div><div class="col edit-mode" data-status="inbox">
-      <div class="col-header">
-        <span class="col-title">📥 Inbox</span>
-        <span class="col-badge">0</span>
-      </div>
-      
-      <div class="add-task-form">
-        <input class="edit-input" id="nt_inbox" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('inbox')">
-        <div class="edit-row">
-          <select class="edit-select" id="np_inbox">
-            <option value="high">🔴 High</option>
-            <option value="medium" selected="">🟡 Medium</option>
-            <option value="low">⚪ Low</option>
-          </select>
-          <select class="edit-select" id="no_inbox">
-            <option value="Manager">Manager</option>
-            <option value="Assistant" selected="">Assistant</option>
-            <option value="Both">Both</option>
-          </select>
-          <input class="edit-input" id="nd_inbox" placeholder="дедлайн" style="margin:0;width:80px">
-        </div>
-        <button class="btn primary" onclick="addTask('inbox')">+ Задача</button>
-      </div><div class="col-empty">Нет задач</div>
     </div><div class="col edit-mode" data-status="plans">
       <div class="col-header">
         <span class="col-title">📋 Plans</span>
@@ -644,7 +644,7 @@ let TASKS = [
     "priority": "medium",
     "deadline": "4 апр",
     "deadlineHot": false,
-    "status": "inprogress",
+    "status": "inbox",
     "owner": "Assistant",
     "subs": [
       {
