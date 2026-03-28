@@ -408,7 +408,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(3)">✏️ Изменить</button>
     </div>
     
-  <div class="inline-edit" id="ie_3">
+  <div class="inline-edit open" id="ie_3">
     <div class="ie-row">
       <span class="ie-label">Название</span>
       <input class="ie-input" id="ie_name_3" value="AI-система для планирования" onkeydown="if(event.key==='Enter')applyEdit(3)">
@@ -450,7 +450,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div><div class="col edit-mode" data-status="plans">
       <div class="col-header">
         <span class="col-title">📋 Plans</span>
-        <span class="col-badge">0</span>
+        <span class="col-badge">1</span>
       </div>
       
       <div class="add-task-form">
@@ -469,7 +469,76 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
           <input class="edit-input" id="nd_plans" placeholder="дедлайн" style="margin:0;width:80px">
         </div>
         <button class="btn primary" onclick="addTask('plans')">+ Задача</button>
-      </div><div class="col-empty">Нет задач</div>
+      </div><div class="card" data-priority="medium" id="card_205">
+    <div class="card-name">Выстроить эффективное расписание дня руководителя</div>
+    <div class="card-meta">
+      <span class="pill pill-medium">Medium</span>
+      <span class="pill pill-dl">📅 11 апреля</span>
+    </div>
+    <hr class="subtasks-divider">
+    <div class="progress-label">0/2 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+    <div class="sub sub-clickable" onclick="toggleSub(206)">
+      <div class="checkbox"></div>
+      <div class="sub-right">
+        <span class="sub-text">Изучить техники эффективной работы</span>
+        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(206)">✕</span></span>
+      </div>
+    </div>
+    <div class="sub sub-clickable" onclick="toggleSub(207)">
+      <div class="checkbox"></div>
+      <div class="sub-right">
+        <span class="sub-text">Внедрить разбиение задачи на операционные действия</span>
+        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(207)">✕</span></span>
+      </div>
+    </div>
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_205" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(205)">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(205)">Ок</button>
+    </div>
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(205)">✏️ Изменить</button>
+    </div>
+    
+  <div class="inline-edit" id="ie_205">
+    <div class="ie-row">
+      <span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_205" value="Выстроить эффективное расписание дня руководителя" onkeydown="if(event.key==='Enter')applyEdit(205)">
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_205"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans" selected="">📋 Plans</option><option value="done">✔ Done</option></select>
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_205">
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
+      </select>
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_205">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select>
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_205" value="11 апреля" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(205)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_205" style="cursor:pointer"> горит
+      </label>
+    </div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(205)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(205)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(205)">Отмена</button>
+    </div>
+  </div>
+  </div>
     </div><div class="col edit-mode" data-status="done">
       <div class="col-header">
         <span class="col-title">✔ Done</span>
@@ -710,6 +779,29 @@ let TASKS = [
         "id": 204,
         "text": "Подписать, отсканировать и отправить",
         "done": true,
+        "owner": "Ast"
+      }
+    ]
+  },
+  {
+    "id": 205,
+    "name": "Выстроить эффективное расписание дня руководителя",
+    "priority": "medium",
+    "deadline": "11 апреля",
+    "deadlineHot": false,
+    "status": "plans",
+    "owner": "Assistant",
+    "subs": [
+      {
+        "id": 206,
+        "text": "Изучить техники эффективной работы",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 207,
+        "text": "Внедрить разбиение задачи на операционные действия",
+        "done": false,
         "owner": "Ast"
       }
     ]
