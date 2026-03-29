@@ -242,9 +242,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(1)">Ок</button>
     </div>
     <hr class="section-divider">
-    <div class="comment-block">
-      <button class="btn" style="font-size:10px;padding:2px 8px" onclick="editComment(1)">+ Комментарий</button>
-    </div>
+      <div class="comment-block">
+        <div class="comment-text">Нужно подкорректировать текст слайдов, чтобы собрать всё вместе</div>
+        <button class="btn" style="font-size:10px;padding:2px 8px;margin-top:5px" onclick="editComment(1)">✏️ Изменить комментарий</button>
+      </div>
     
     <div class="card-controls">
       <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(1)">✏️ Изменить</button>
@@ -782,7 +783,7 @@ let TASKS = [
     "deadlineHot": true,
     "status": "inprogress",
     "owner": "Assistant",
-    "comment": "",
+    "comment": "Нужно подкорректировать текст слайдов, чтобы собрать всё вместе",
     "subs": [
       {
         "id": 11,
