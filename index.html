@@ -195,11 +195,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     <div class="card-name">Создать презентацию (short + long version)</div>
     <div class="card-meta">
       <span class="pill pill-high">High</span>
-      <span class="pill pill-dl hot">📅 27 мар (просрочено)</span>
+      <span class="pill pill-dl hot">📅 5 апр</span>
     </div>
     <hr class="section-divider">
-    <div class="progress-label">2/4 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:50%"></div></div>
+    <div class="progress-label">2/5 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:40%"></div></div>
     <div class="sub" id="sub_11">
       <div class="checkbox checked" onclick="toggleSub(11)" style="cursor:pointer;flex-shrink:0;margin-top:6px"></div>
       <div class="sub-right" style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap">
@@ -224,12 +224,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
              <span class="sub-del" style="display:inline" onclick="delSub(301)">✕</span>
       </div>
     </div>
-    <div class="sub" id="sub_302">
-      <div class="checkbox" onclick="toggleSub(302)" style="cursor:pointer;flex-shrink:0;margin-top:6px"></div>
+    <div class="sub" id="sub_313">
+      <div class="checkbox" onclick="toggleSub(313)" style="cursor:pointer;flex-shrink:0;margin-top:6px"></div>
       <div class="sub-right" style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap">
-        <span class="sub-text" style="flex:1;cursor:pointer" onclick="toggleSub(302)">Утвердить финальную версию</span>
-        <select class="edit-select" style="font-size:10px;padding:2px 5px;min-width:46px" onchange="changeSubOwner(302,this.value)"><option value="Ast">Ast</option><option value="Both" selected="">Both</option><option value="Mgr">Mgr</option></select>
-             <span class="sub-del" style="display:inline" onclick="delSub(302)">✕</span>
+        <span class="sub-text" style="flex:1;cursor:pointer" onclick="toggleSub(313)">Отдать в работу финальный текст</span>
+        <select class="edit-select" style="font-size:10px;padding:2px 5px;min-width:46px" onchange="changeSubOwner(313,this.value)"><option value="Ast" selected="">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option></select>
+             <span class="sub-del" style="display:inline" onclick="delSub(313)">✕</span>
+      </div>
+    </div>
+    <div class="sub" id="sub_314">
+      <div class="checkbox" onclick="toggleSub(314)" style="cursor:pointer;flex-shrink:0;margin-top:6px"></div>
+      <div class="sub-right" style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+        <span class="sub-text" style="flex:1;cursor:pointer" onclick="toggleSub(314)">Утвердить и получить финальную версию</span>
+        <select class="edit-select" style="font-size:10px;padding:2px 5px;min-width:46px" onchange="changeSubOwner(314,this.value)"><option value="Ast">Ast</option><option value="Both" selected="">Both</option><option value="Mgr">Mgr</option></select>
+             <span class="sub-del" style="display:inline" onclick="delSub(314)">✕</span>
       </div>
     </div>
     <div class="add-sub-row">
@@ -243,7 +251,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
     <hr class="section-divider">
       <div class="comment-block">
-        <div class="comment-text">Нужно подкорректировать текст слайдов, чтобы собрать всё вместе</div>
+        <div class="comment-text">Нужно подкорректировать текст слайдов, доделать слайды для full версии, собрать всё вместе + вариант для полиграфии (требования по качеству)</div>
         <button class="btn" style="font-size:10px;padding:2px 8px;margin-top:5px" onclick="editComment(1)">✏️ Изменить комментарий</button>
       </div>
     
@@ -278,7 +286,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
     <div class="ie-row">
       <span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_1" value="27 мар (просрочено)" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(1)">
+      <input class="ie-input" id="ie_dl_1" value="5 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(1)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
         <input type="checkbox" id="ie_hot_1" checked="" style="cursor:pointer"> горит
       </label>
@@ -293,7 +301,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     <div class="card-name">Сделать аутрич для компаний Амедарт и Озон Фарма</div>
     <div class="card-meta">
       <span class="pill pill-high">High</span>
-      <span class="pill pill-dl hot">📅 30 мар</span>
+      <span class="pill pill-dl hot">📅 5 апр</span>
     </div>
     <hr class="section-divider">
     <div class="progress-label">5/7 выполнено</div>
@@ -399,7 +407,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
     <div class="ie-row">
       <span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_2" value="30 мар" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(2)">
+      <input class="ie-input" id="ie_dl_2" value="5 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(2)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
         <input type="checkbox" id="ie_hot_2" checked="" style="cursor:pointer"> горит
       </label>
@@ -492,9 +500,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(3)">Ок</button>
     </div>
     <hr class="section-divider">
-    <div class="comment-block">
-      <button class="btn" style="font-size:10px;padding:2px 8px" onclick="editComment(3)">+ Комментарий</button>
-    </div>
+      <div class="comment-block">
+        <div class="comment-text">Добавить уведомления при закрытии или  появлении новой задачи</div>
+        <button class="btn" style="font-size:10px;padding:2px 8px;margin-top:5px" onclick="editComment(3)">✏️ Изменить комментарий</button>
+      </div>
     
     <div class="card-controls">
       <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(3)">✏️ Изменить</button>
@@ -542,7 +551,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div><div class="col edit-mode" data-status="plans">
       <div class="col-header">
         <span class="col-title">📋 Plans</span>
-        <span class="col-badge">1</span>
+        <span class="col-badge">2</span>
       </div>
       
       <div class="add-task-form">
@@ -565,7 +574,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     <div class="card-name">Выстроить эффективное расписание дня руководителя</div>
     <div class="card-meta">
       <span class="pill pill-medium">Medium</span>
-      <span class="pill pill-dl">📅 14 апреля</span>
+      <span class="pill pill-dl">📅 (нет дедлайна)</span>
     </div>
     <hr class="section-divider">
     <div class="progress-label">0/3 выполнено</div>
@@ -639,7 +648,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
     <div class="ie-row">
       <span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_205" value="14 апреля" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(205)">
+      <input class="ie-input" id="ie_dl_205" value="(нет дедлайна)" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(205)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
         <input type="checkbox" id="ie_hot_205" style="cursor:pointer"> горит
       </label>
@@ -648,6 +657,80 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(205)">Сохранить</button>
       <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(205)">Удалить</button>
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(205)">Отмена</button>
+    </div>
+  </div>
+  </div><div class="card" data-priority="medium" id="card_311">
+    <div class="card-name">Создать ИИ-копирайтера</div>
+    <div class="card-meta">
+      <span class="pill pill-medium">Medium</span>
+      <span class="pill pill-dl">📅 14 апр</span>
+    </div>
+    <hr class="section-divider">
+    <div class="progress-label">0/1 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+    <div class="sub" id="sub_312">
+      <div class="checkbox" onclick="toggleSub(312)" style="cursor:pointer;flex-shrink:0;margin-top:6px"></div>
+      <div class="sub-right" style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+        <span class="sub-text" style="flex:1;cursor:pointer" onclick="toggleSub(312)">Описать варианты, как это может работать</span>
+        <select class="edit-select" style="font-size:10px;padding:2px 5px;min-width:46px" onchange="changeSubOwner(312,this.value)"><option value="Ast" selected="">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option></select>
+             <span class="sub-del" style="display:inline" onclick="delSub(312)">✕</span>
+      </div>
+    </div>
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_311" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(311)">
+      <select class="edit-select" id="nso_311" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option>
+        <option value="Both">Both</option>
+        <option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(311)">Ок</button>
+    </div>
+    <hr class="section-divider">
+      <div class="comment-block">
+        <div class="comment-text">Мб использовать несколько ИИ-агентов, которые усиливают итерациями текст и делают его понятным и читаемым</div>
+        <button class="btn" style="font-size:10px;padding:2px 8px;margin-top:5px" onclick="editComment(311)">✏️ Изменить комментарий</button>
+      </div>
+    
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(311)">✏️ Изменить</button>
+    </div>
+    
+  <div class="inline-edit" id="ie_311">
+    <div class="ie-row">
+      <span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_311" value="Создать ИИ-копирайтера" onkeydown="if(event.key==='Enter')applyEdit(311)">
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_311"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans" selected="">📋 Plans</option><option value="done">✔ Done</option></select>
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_311">
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
+      </select>
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_311">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select>
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_311" value="14 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(311)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_311" style="cursor:pointer"> горит
+      </label>
+    </div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(311)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(311)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(311)">Отмена</button>
     </div>
   </div>
   </div>
@@ -779,11 +862,11 @@ let TASKS = [
     "id": 1,
     "name": "Создать презентацию (short + long version)",
     "priority": "high",
-    "deadline": "27 мар (просрочено)",
+    "deadline": "5 апр",
     "deadlineHot": true,
     "status": "inprogress",
     "owner": "Assistant",
-    "comment": "Нужно подкорректировать текст слайдов, чтобы собрать всё вместе",
+    "comment": "Нужно подкорректировать текст слайдов, доделать слайды для full версии, собрать всё вместе + вариант для полиграфии (требования по качеству)",
     "subs": [
       {
         "id": 11,
@@ -804,8 +887,14 @@ let TASKS = [
         "owner": "Both"
       },
       {
-        "id": 302,
-        "text": "Утвердить финальную версию",
+        "id": 313,
+        "text": "Отдать в работу финальный текст",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 314,
+        "text": "Утвердить и получить финальную версию",
         "done": false,
         "owner": "Both"
       }
@@ -815,7 +904,7 @@ let TASKS = [
     "id": 2,
     "name": "Сделать аутрич для компаний Амедарт и Озон Фарма",
     "priority": "high",
-    "deadline": "30 мар",
+    "deadline": "5 апр",
     "deadlineHot": true,
     "status": "inprogress",
     "owner": "Assistant",
@@ -873,7 +962,7 @@ let TASKS = [
     "deadlineHot": false,
     "status": "inbox",
     "owner": "Assistant",
-    "comment": "",
+    "comment": "Добавить уведомления при закрытии или  появлении новой задачи",
     "subs": [
       {
         "id": 31,
@@ -947,7 +1036,7 @@ let TASKS = [
     "id": 205,
     "name": "Выстроить эффективное расписание дня руководителя",
     "priority": "medium",
-    "deadline": "14 апреля",
+    "deadline": "(нет дедлайна)",
     "deadlineHot": false,
     "status": "plans",
     "owner": "Assistant",
@@ -968,6 +1057,24 @@ let TASKS = [
       {
         "id": 309,
         "text": "Получить в календаре руководителя список операционных задач на день с учётом всех техник",
+        "done": false,
+        "owner": "Ast"
+      }
+    ]
+  },
+  {
+    "id": 311,
+    "name": "Создать ИИ-копирайтера",
+    "priority": "medium",
+    "deadline": "14 апр",
+    "deadlineHot": false,
+    "status": "plans",
+    "owner": "Assistant",
+    "comment": "Мб использовать несколько ИИ-агентов, которые усиливают итерациями текст и делают его понятным и читаемым",
+    "subs": [
+      {
+        "id": 312,
+        "text": "Описать варианты, как это может работать",
         "done": false,
         "owner": "Ast"
       }
