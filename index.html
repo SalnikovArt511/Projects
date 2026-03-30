@@ -551,7 +551,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div><div class="col edit-mode" data-status="plans">
       <div class="col-header">
         <span class="col-title">📋 Plans</span>
-        <span class="col-badge">2</span>
+        <span class="col-badge">3</span>
       </div>
       
       <div class="add-task-form">
@@ -731,6 +731,69 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(311)">Сохранить</button>
       <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(311)">Удалить</button>
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(311)">Отмена</button>
+    </div>
+  </div>
+  </div><div class="card" data-priority="low" id="card_315">
+    <div class="card-name">ТГ канал / ютуб канал про фармацевтику</div>
+    <div class="card-meta">
+      <span class="pill pill-low">Low</span>
+      <span class="pill pill-dl">📅 (нет дедалйна)</span>
+    </div>
+    <hr class="section-divider">
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_315" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(315)">
+      <select class="edit-select" id="nso_315" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option>
+        <option value="Both">Both</option>
+        <option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(315)">Ок</button>
+    </div>
+    <hr class="section-divider">
+    <div class="comment-block">
+      <button class="btn" style="font-size:10px;padding:2px 8px" onclick="editComment(315)">+ Комментарий</button>
+    </div>
+    
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(315)">✏️ Изменить</button>
+    </div>
+    
+  <div class="inline-edit" id="ie_315">
+    <div class="ie-row">
+      <span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_315" value="ТГ канал / ютуб канал про фармацевтику" onkeydown="if(event.key==='Enter')applyEdit(315)">
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_315"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans" selected="">📋 Plans</option><option value="done">✔ Done</option></select>
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_315">
+        <option value="high">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low" selected="">⚪ Low</option>
+      </select>
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_315">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select>
+    </div>
+    <div class="ie-row">
+      <span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_315" value="(нет дедалйна)" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(315)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_315" style="cursor:pointer"> горит
+      </label>
+    </div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(315)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(315)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(315)">Отмена</button>
     </div>
   </div>
   </div>
@@ -1079,6 +1142,17 @@ let TASKS = [
         "owner": "Ast"
       }
     ]
+  },
+  {
+    "id": 315,
+    "name": "ТГ канал / ютуб канал про фармацевтику",
+    "priority": "low",
+    "deadline": "(нет дедалйна)",
+    "deadlineHot": false,
+    "status": "plans",
+    "owner": "Assistant",
+    "comment": "",
+    "subs": []
   }
 ];
 
