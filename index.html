@@ -116,7 +116,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="board" id="board"><div class="col" data-status="inprogress"><div class="col-header"><span class="col-title">🔄 In progress</span><span class="col-badge">2</span></div><div class="add-task-form"><input class="edit-input" id="nt_inprogress" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('inprogress')"><div class="edit-row"><select class="edit-select" id="np_inprogress"><option value="high">🔴 High</option><option value="medium" selected="">🟡 Medium</option><option value="low">⚪ Low</option></select><select class="edit-select" id="no_inprogress"><option value="Manager">Manager</option><option value="Assistant" selected="">Assistant</option><option value="Both">Both</option></select><input class="edit-input" id="nd_inprogress" placeholder="дедлайн" style="margin:0;width:80px"></div><button class="btn primary" onclick="addTask('inprogress')">+ Задача</button></div><div class="card" data-priority="high" id="card_1">
     <div class="card-name">Создать презентацию (short + long version)</div>
     <div class="card-meta"><span class="pill pill-high">High</span><span class="pill pill-dl hot">📅 9 апр</span></div>
-    <hr class="section-divider"><div class="progress-label">4/9 выполнено</div><div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:44%"></div></div><div class="sub" id="sub_11">
+    <hr class="section-divider"><div class="progress-label">5/9 выполнено</div><div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:56%"></div></div><div class="sub" id="sub_11">
       <div class="checkbox checked" style="cursor:pointer;flex-shrink:0;margin-top:1px" onclick="toggleSub(11)"></div>
       <div class="sub-right" style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="sub-text done" style="flex:1" onclick="toggleSub(11)">Выбрать дизайнера</span><span class="sub-owner">Ast</span></div>
     </div><div class="sub" id="sub_12">
@@ -129,8 +129,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <div class="checkbox checked" style="cursor:pointer;flex-shrink:0;margin-top:1px" onclick="toggleSub(401)"></div>
       <div class="sub-right" style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="sub-text done" style="flex:1" onclick="toggleSub(401)">Закончить работу с дизайнером, оплатить, получить исходники</span><span class="sub-owner">Ast</span></div>
     </div><div class="sub" id="sub_402">
-      <div class="checkbox" style="cursor:pointer;flex-shrink:0;margin-top:1px" onclick="toggleSub(402)"></div>
-      <div class="sub-right" style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="sub-text" style="flex:1" onclick="toggleSub(402)">Собрать короткую презентацию</span><span class="sub-owner">Ast</span></div>
+      <div class="checkbox checked" style="cursor:pointer;flex-shrink:0;margin-top:1px" onclick="toggleSub(402)"></div>
+      <div class="sub-right" style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="sub-text done" style="flex:1" onclick="toggleSub(402)">Собрать короткую презентацию</span><span class="sub-owner">Ast</span></div>
     </div><div class="sub" id="sub_403">
       <div class="checkbox" style="cursor:pointer;flex-shrink:0;margin-top:1px" onclick="toggleSub(403)"></div>
       <div class="sub-right" style="flex:1;display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="sub-text" style="flex:1" onclick="toggleSub(403)">Внести правки по короткой презентации</span><span class="sub-owner">Both</span></div>
@@ -350,7 +350,7 @@ let TASKS = [
       {
         "id": 402,
         "text": "Собрать короткую презентацию",
-        "done": false,
+        "done": true,
         "owner": "Ast"
       },
       {
