@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasks Board</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f7f5;--surface:#fff;--surface2:#f1f0ec;
+  --border:rgba(55,53,47,.12);--border2:rgba(55,53,47,.22);
+  --text:#37352f;--text2:#787672;--text3:#aeaca8;
+  --accent:#2eaadc;--danger:#e03e3e;--radius:8px
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#191919;--surface:#252525;--surface2:#2f2f2f;
+  --border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.2);
+  --text:#e6e6e3;--text2:#9b9a97;--text3:#6b6968
+}}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);padding:16px 16px 60px;min-height:100vh}
+
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:10px}
+.header-title{font-size:20px;font-weight:600}
+.header-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.save-status{font-size:11px;color:var(--text3);transition:color .2s;min-width:10px}
+.save-status.saving{color:var(--accent)}
+.save-status.ok{color:#3b7d29}
+.save-status.err{color:var(--danger)}
+@media(prefers-color-scheme:dark){.save-status.ok{color:#97c459}}
+
+.btn{font-size:12px;padding:5px 13px;border-radius:20px;border:1px solid var(--border2);background:var(--surface);color:var(--text2);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:inherit}
+.btn:hover{border-color:var(--text3);color:var(--text)}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn.primary:hover{opacity:.85}
+.btn.danger{color:var(--danger);border-color:var(--danger)}
+.btn.danger:hover{background:var(--danger);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+.gh-banner{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);padding:12px 14px;margin-bottom:16px;display:none}
+.gh-banner.visible{display:block}
+.gh-banner-title{font-size:13px;font-weight:500;margin-bottom:8px}
+.gh-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.gh-input{font-size:12px;font-family:inherit;border:1px solid var(--border2);border-radius:5px;padding:5px 9px;background:var(--surface);color:var(--text);outline:none;flex:1;min-width:120px}
+.gh-input:focus{border-color:var(--accent)}
+.gh-hint{font-size:11px;color:var(--text3);margin-top:4px;line-height:1.6}
+.gh-hint a{color:var(--accent);text-decoration:none}
+
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;margin-top:12px}
+.filter-btn{font-size:12px;padding:4px 12px;border-radius:20px;border:1px solid var(--border2);background:var(--surface);color:var(--text2);cursor:pointer;transition:all .15s;font-family:inherit}
+.filter-btn.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+
+.board{display:flex;gap:10px;align-items:flex-start;overflow-x:auto;padding-bottom:10px}
+.col{flex:0 0 245px;background:var(--surface2);border-radius:10px;padding:10px}
+.col-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding:0 2px}
+.col-title{font-size:12px;font-weight:600;color:var(--text2)}
+.col-badge{font-size:11px;background:rgba(55,53,47,.08);color:var(--text3);border-radius:10px;padding:1px 7px}
+@media(prefers-color-scheme:dark){.col-badge{background:rgba(255,255,255,.07)}}
+
+.card{background:var(--surface);border:1px solid var(--border);border-left:3px solid transparent;border-radius:var(--radius);padding:11px 12px;margin-bottom:7px;transition:box-shadow .15s}
+.card:hover{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.card[data-priority=high]{border-left-color:#e03e3e}
+.card[data-priority=medium]{border-left-color:#d9730d}
+.card[data-priority=low]{border-left-color:#9b9a97}
+.card.hidden{display:none}
+.card-name{font-size:13px;font-weight:500;line-height:1.4;margin-bottom:7px}
+.col[data-status=done] .card-name{text-decoration:line-through;color:var(--text3)}
+.card-meta{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+
+.pill{font-size:10px;padding:2px 7px;border-radius:4px;white-space:nowrap;font-weight:500}
+.pill-high{background:#fbe4e4;color:#9b1c1c}
+.pill-medium{background:#faebdd;color:#7a3a00}
+.pill-low{background:#f1f0ec;color:#6b6968}
+.pill-dl{background:var(--surface2);color:var(--text2);font-weight:400}
+.pill-dl.hot{background:#fbe4e4;color:#9b1c1c}
+@media(prefers-color-scheme:dark){
+  .pill-high{background:#3d1515;color:#f98989}
+  .pill-medium{background:#3a2000;color:#f5a05a}
+  .pill-low{background:#2f2f2f;color:#9b9a97}
+  .pill-dl.hot{background:#3d1515;color:#f98989}
+}
+
+.section-divider{border:none;border-top:1px solid var(--border);margin:9px 0 7px}
+.progress-label{font-size:10px;color:var(--text3);margin-bottom:5px}
+.progress-bar-wrap{height:3px;background:var(--surface2);border-radius:2px;margin-bottom:8px;overflow:hidden}
+.progress-bar-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .3s}
+
+.sub{display:flex;align-items:flex-start;gap:7px;padding:3px 0}
+.checkbox{width:14px;height:14px;border-radius:3px;border:1.5px solid var(--border2);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .15s;cursor:pointer}
+.checkbox.checked{background:var(--accent);border-color:var(--accent)}
+.checkbox.checked::after{content:'';display:block;width:4px;height:7px;border:1.5px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px)}
+.sub-body{flex:1;min-width:0}
+.sub-text{font-size:12px;color:var(--text2);line-height:1.4;word-break:break-word;cursor:pointer}
+.sub-text:hover{color:var(--text)}
+.sub-text.done{text-decoration:line-through;color:var(--text3)}
+.sub-meta{display:flex;align-items:center;gap:5px;margin-top:2px;flex-wrap:wrap}
+.sub-owner-label{font-size:10px;color:var(--text3)}
+
+.sub-edit-row{display:flex;gap:5px;align-items:center;margin-top:4px;flex-wrap:wrap}
+.sub-edit-input{flex:1;font-size:12px;font-family:inherit;border:1px solid var(--accent);border-radius:5px;padding:3px 7px;background:var(--surface);color:var(--text);outline:none;min-width:80px}
+
+.col-empty{font-size:12px;color:var(--text3);text-align:center;padding:16px 0 8px}
+
+.comment-block{margin-top:2px}
+.comment-text{font-size:12px;color:var(--text2);line-height:1.55;background:var(--surface2);border-radius:5px;padding:7px 9px;white-space:pre-wrap;word-break:break-word}
+.comment-empty{font-size:11px;color:var(--text3);font-style:italic;padding:2px 0}
+.comment-textarea{width:100%;font-size:12px;font-family:inherit;border:1px solid var(--border2);border-radius:5px;padding:6px 8px;background:var(--surface);color:var(--text);outline:none;resize:vertical;min-height:56px;line-height:1.5}
+.comment-textarea:focus{border-color:var(--accent)}
+.comment-save-row{display:flex;gap:6px;margin-top:5px}
+
+.add-task-form{display:none;background:var(--surface);border:1px dashed var(--border2);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px}
+.edit-mode .add-task-form{display:block}
+.edit-input{width:100%;font-size:12px;font-family:inherit;border:1px solid var(--border2);border-radius:5px;padding:5px 8px;background:var(--surface);color:var(--text);margin-bottom:6px;outline:none}
+.edit-input:focus{border-color:var(--accent)}
+.edit-row{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+.edit-select{font-size:12px;font-family:inherit;border:1px solid var(--border2);border-radius:5px;padding:4px 7px;background:var(--surface);color:var(--text);outline:none;cursor:pointer}
+
+.add-sub-row{display:none;align-items:center;gap:5px;margin-top:5px}
+.edit-mode .add-sub-row{display:flex}
+.add-sub-input{flex:1;font-size:12px;font-family:inherit;border:1px solid var(--border2);border-radius:5px;padding:3px 7px;background:var(--surface);color:var(--text);outline:none}
+.add-sub-input:focus{border-color:var(--accent)}
+
+.card-controls{display:none;gap:5px;margin-top:9px;align-items:center;flex-wrap:wrap}
+.edit-mode .card-controls{display:flex}
+
+.inline-edit{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.inline-edit.open{display:block}
+.ie-row{display:flex;gap:6px;margin-bottom:7px;flex-wrap:wrap;align-items:center}
+.ie-label{font-size:11px;color:var(--text3);flex-shrink:0;width:64px}
+.ie-input{flex:1;font-size:12px;font-family:inherit;border:1px solid var(--border2);border-radius:5px;padding:4px 8px;background:var(--surface);color:var(--text);outline:none;min-width:80px}
+.ie-input:focus{border-color:var(--accent)}
+.ie-select{font-size:12px;font-family:inherit;border:1px solid var(--border2);border-radius:5px;padding:4px 7px;background:var(--surface);color:var(--text);outline:none;cursor:pointer;flex:1}
+.ie-actions{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-title">Tasks Board</div>
+  <div class="header-actions">
+    <span class="save-status" id="saveStatus"></span>
+    <button class="btn" id="editBtn" onclick="toggleEdit()">✏️ Редактировать</button>
+    <button class="btn primary" id="saveBtn" onclick="saveToGitHub()">💾 Сохранить</button>
+    <button class="btn" onclick="toggleGhBanner()" style="font-size:11px;padding:4px 9px;opacity:.6" title="Настройки">⚙️</button>
+  </div>
+</div>
+
+<div class="gh-banner" id="ghBanner">
+  <div class="gh-banner-title">Настройки</div>
+  <div class="gh-row">
+    <input class="gh-input" id="ghToken" placeholder="●●●●●●●●●●●●" type="password" readonly>
+    <input class="gh-input" id="ghRepo"  value="salnikovart511/Projects" style="max-width:220px" readonly>
+    <input class="gh-input" id="ghFile"  value="index.html" style="max-width:120px" readonly>
+  </div>
+  <div class="gh-hint">
+    Токен зашит в файл. Репозиторий приватный — токен в безопасности.
+  </div>
+  <div class="gh-hint" style="margin-top:10px;padding-top:10px;border-top:0.5px solid var(--border2)">
+    <b style="color:var(--text2)">Как редактировать:</b><br>
+    1. Нажми <b>✏️ Редактировать</b> → внеси изменения → нажми <b>💾 Сохранить</b><br>
+    2. Подожди ~30 сек → обнови страницу<br><br>
+    <b style="color:var(--text2)">Галочки</b> сохраняются автоматически — ничего нажимать не нужно
+  </div>
+  <div style="margin-top:10px">
+    <button class="btn" onclick="toggleGhBanner()">Закрыть</button>
+  </div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" data-filter="all"       onclick="setFilter('all')">Все</button>
+  <button class="filter-btn"        data-filter="Manager"   onclick="setFilter('Manager')">Руководитель</button>
+  <button class="filter-btn"        data-filter="Assistant" onclick="setFilter('Assistant')">Ассистент</button>
+  <button class="filter-btn"        data-filter="Both"      onclick="setFilter('Both')">Совместно</button>
+</div>
+
+<div class="board" id="board"></div>
+
+<script>
+let TASKS = [
+  {
+    id:1, name:"Создать презентацию (short + long version)",
+    priority:"high", deadline:"9 апр", deadlineHot:true,
+    status:"inprogress", owner:"Assistant",
+    comment:"",
+    subs:[
+      {id:11,  text:"Выбрать дизайнера",                                 done:true,  owner:"Ast"},
+      {id:12,  text:"Согласовать условия и отдать в работу",              done:true,  owner:"Ast"},
+      {id:301, text:"Доработать текст слайдов",                           done:true,  owner:"Both"},
+      {id:316, text:"Закончить работу с дизайнером, оплатить, получить исходники", done:true, owner:"Ast"},
+      {id:317, text:"Собрать короткую презентацию",                       done:false, owner:"Ast"},
+      {id:318, text:"Внести правки по короткой презентации",              done:false, owner:"Both"},
+      {id:319, text:"Собрать полную презентацию",                         done:false, owner:"Ast"},
+      {id:320, text:"Внести правки по полной презентации",                done:false, owner:"Both"},
+      {id:321, text:"Проверить настройки печати",                         done:false, owner:"Ast"},
+    ]
+  },
+  {
+    id:2, name:"Сделать аутрич для компаний Амедарт и Озон Фарма",
+    priority:"high", deadline:"13 апр", deadlineHot:true,
+    status:"inprogress", owner:"Assistant", comment:"",
+    subs:[
+      {id:21,  text:"Анализ Озон Фарма + промпт для анализа",            done:true,  owner:"Ast"},
+      {id:22,  text:"Структура аутрича Озон Фарма + промпт",             done:true,  owner:"Ast"},
+      {id:23,  text:"Ветки по компаниям в Claude + Диск",                done:true,  owner:"Ast"},
+      {id:304, text:"Анализ амедарт + структура аутрича",                done:true,  owner:"Ast"},
+      {id:322, text:"На этой неделе отправка писем: текст+преза+продукт лист", done:false, owner:"Mgr"},
+      {id:323, text:"С помощью агента сформировать структуру писем и попробовать сделать шаблон, на который можно будет опираться при создании последующих писем", done:false, owner:"Ast"},
+    ]
+  },
+  {
+    id:3, name:"AI-система для планирования",
+    priority:"medium", deadline:"12 апр", deadlineHot:false,
+    status:"inbox", owner:"Assistant",
+    comment:"Добавить уведомления при закрытии или появлении новой задачи",
+    subs:[
+      {id:31,  text:"Выбрать структуру системы",                         done:true,  owner:"Ast"},
+      {id:32,  text:"Создать бэклог",                                    done:true,  owner:"Ast"},
+      {id:33,  text:"Настроить ТГ бот + Notion",                         done:false, owner:"Ast"},
+      {id:307, text:"Связать Notion через ИИ с Google Календарём",        done:false, owner:"Ast"},
+      {id:308, text:"Проверить и доработать систему",                     done:false, owner:"Both"},
+    ]
+  },
+  {
+    id:311, name:"Создать ИИ-копирайтера",
+    priority:"medium", deadline:"13 апр", deadlineHot:false,
+    status:"inbox", owner:"Assistant",
+    comment:"Использовать несколько ИИ-агентов, которые усиливают итерациями текст и делают его понятным и читаемым",
+    subs:[
+      {id:312, text:"Описать варианты, как это может работать",           done:false, owner:"Ast"},
+      {id:324, text:"Спарсить инструкции по написанию писем/постов/документов, где нам нравится текст и как человек пишет", done:false, owner:"Ast"},
+      {id:325, text:"Протестировать на создании писем первую версию наших агентов", done:false, owner:"Ast"},
+    ]
+  },
+  {
+    id:205, name:"Выстроить эффективное расписание дня руководителя",
+    priority:"medium", deadline:"", deadlineHot:false,
+    status:"plans", owner:"Assistant", comment:"",
+    subs:[
+      {id:206, text:"Изучить техники эффективной работы",                 done:false, owner:"Ast"},
+      {id:207, text:"Внедрить разбиение задачи на операционные действия", done:false, owner:"Ast"},
+      {id:309, text:"Получить в календаре руководителя список операционных задач на день с учётом всех техник", done:false, owner:"Ast"},
+    ]
+  },
+  {
+    id:315, name:"ТГ канал / ютуб канал про фармацевтику",
+    priority:"low", deadline:"", deadlineHot:false,
+    status:"plans", owner:"Assistant", comment:"",
+    subs:[]
+  },
+  {
+    id:326, name:"Оформить новый продукт лист",
+    priority:"medium", deadline:"", deadlineHot:false,
+    status:"plans", owner:"Assistant",
+    comment:"Работаем ИТЕРАЦИЯМИ: черновик (что-то хорошее выдал GPT) - выношу на обсуждение - после доработки полная версия",
+    subs:[
+      {id:327, text:"Сгруппировать по категориям молекулы (сильное поднять в топ, что-то опустить)", done:false, owner:"Ast"},
+    ]
+  },
+  {
+    id:4, name:"Подписать шаблон NDA",
+    priority:"high", deadline:"27 мар", deadlineHot:true,
+    status:"done", owner:"Assistant", comment:"",
+    subs:[
+      {id:201, text:"Создать шаблон NDA",                                 done:true, owner:"Ast"},
+      {id:202, text:"Отредактировать",                                    done:true, owner:"Ast"},
+      {id:203, text:"Получить все личные данные",                          done:true, owner:"Ast"},
+      {id:204, text:"Подписать, отсканировать и отправить",               done:true, owner:"Ast"},
+    ]
+  },
+];
+
+const COLS=[
+  {key:"inprogress", label:"🔄 In progress"},
+  {key:"inbox",      label:"📥 Inbox"},
+  {key:"plans",      label:"📋 Plans"},
+  {key:"done",       label:"✔ Done"},
+];
+
+let editMode=false;
+let currentFilter="all";
+let uid=400;
+let openEditId=null;
+let editingCommentId=null;
+let editingSubId=null;
+
+function nid(){return ++uid}
+function getTask(id){return TASKS.find(t=>t.id===id)}
+function findSub(id){for(const t of TASKS){const s=t.subs.find(s=>s.id===id);if(s)return{t,s}}return null}
+
+function subMatch(o,f){
+  if(f==="all")return true;
+  if(f==="Manager")return o==="Mgr"||o==="Manager"||o==="Both";
+  if(f==="Assistant")return o==="Ast"||o==="Assistant"||o==="Both";
+  if(f==="Both")return o==="Both";
+  return true;
+}
+function taskMatch(o,f){
+  if(f==="all")return true;
+  if(f==="Manager")return o==="Manager"||o==="Both";
+  if(f==="Assistant")return o==="Assistant"||o==="Both";
+  if(f==="Both")return o==="Both";
+  return true;
+}
+function taskVisible(task){
+  if(currentFilter==="all")return true;
+  if(taskMatch(task.owner,currentFilter))return true;
+  return task.subs.some(s=>subMatch(s.owner,currentFilter));
+}
+function visibleSubs(task){
+  if(currentFilter==="all")return task.subs;
+  return task.subs.filter(s=>subMatch(s.owner,currentFilter));
+}
+
+function ppill(p){
+  const l={high:"High",medium:"Medium",low:"Low"};
+  return`<span class="pill pill-${p}">${l[p]}</span>`;
+}
+
+function commentBlock(task){
+  const c=(task.comment||"").trim();
+  const isEditing=editingCommentId===task.id;
+  if(isEditing)return`
+    <div class="comment-block">
+      <textarea class="comment-textarea" id="ct_${task.id}" placeholder="Напиши комментарий…">${c}</textarea>
+      <div class="comment-save-row">
+        <button class="btn primary" style="font-size:11px;padding:3px 10px" onclick="saveComment(${task.id})">Сохранить</button>
+        <button class="btn" style="font-size:11px;padding:3px 10px" onclick="cancelComment()">Отмена</button>
+      </div>
+    </div>`;
+  if(c)return`
+    <div class="comment-block">
+      <div class="comment-text">${c.replace(/</g,"&lt;")}</div>
+      ${editMode?`<button class="btn" style="font-size:10px;padding:2px 8px;margin-top:5px" onclick="editComment(${task.id})">✏️ Изменить комментарий</button>`:""}
+    </div>`;
+  return`<div class="comment-block">${editMode
+    ?`<button class="btn" style="font-size:10px;padding:2px 8px" onclick="editComment(${task.id})">+ Комментарий</button>`
+    :`<span class="comment-empty">Нет комментария</span>`}</div>`;
+}
+
+function inlineEditPanel(task){
+  const isOpen=openEditId===task.id;
+  const statusOpts=COLS.map(c=>`<option value="${c.key}" ${task.status===c.key?"selected":""}>${c.label}</option>`).join("");
+  return`
+  <div class="inline-edit${isOpen?" open":""}" id="ie_${task.id}">
+    <div class="ie-row"><span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_${task.id}" value="${task.name.replace(/"/g,'&quot;')}"
+             onkeydown="if(event.key==='Enter')applyEdit(${task.id})"></div>
+    <div class="ie-row"><span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_${task.id}">${statusOpts}</select></div>
+    <div class="ie-row"><span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_${task.id}">
+        <option value="high"   ${task.priority==="high"  ?"selected":""}>🔴 High</option>
+        <option value="medium" ${task.priority==="medium"?"selected":""}>🟡 Medium</option>
+        <option value="low"    ${task.priority==="low"   ?"selected":""}>⚪ Low</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_${task.id}">
+        <option value="Manager"   ${task.owner==="Manager"  ?"selected":""}>Manager</option>
+        <option value="Assistant" ${task.owner==="Assistant"?"selected":""}>Assistant</option>
+        <option value="Both"      ${task.owner==="Both"     ?"selected":""}>Both</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_${task.id}" value="${task.deadline||""}" placeholder="15 апр"
+             onkeydown="if(event.key==='Enter')applyEdit(${task.id})">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_${task.id}" ${task.deadlineHot?"checked":""} style="cursor:pointer"> горит
+      </label></div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(${task.id})">Сохранить</button>
+      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(${task.id})">Удалить</button>
+      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(${task.id})">Отмена</button>
+    </div>
+  </div>`;
+}
+
+function renderCard(task){
+  const vis=taskVisible(task)?"":" hidden";
+  const subs=visibleSubs(task);
+  const total=subs.length;
+  const doneCount=subs.filter(s=>s.done).length;
+  const pct=total?Math.round(doneCount/total*100):0;
+  const ownerOpts=(cur)=>["Ast","Both","Mgr"].map(o=>`<option value="${o}" ${cur===o?"selected":""}>${o}</option>`).join("");
+
+  const subsHtml=subs.map(s=>{
+    const isEditingSub=editMode&&editingSubId===s.id;
+    if(isEditingSub)return`
+      <div class="sub" id="sub_${s.id}">
+        <div class="checkbox${s.done?" checked":""}" onclick="toggleSub(${s.id})" style="margin-top:6px"></div>
+        <div class="sub-body">
+          <div class="sub-edit-row">
+            <input class="sub-edit-input" id="sei_${s.id}" value="${s.text.replace(/"/g,'&quot;')}"
+                   onkeydown="if(event.key==='Enter')saveSubEdit(${s.id});if(event.key==='Escape')cancelSubEdit()">
+            <select class="edit-select" style="font-size:10px;padding:2px 5px;min-width:46px" id="seo_${s.id}"
+                    onchange="changeSubOwner(${s.id},this.value)">${ownerOpts(s.owner)}</select>
+            <button class="btn primary" style="font-size:10px;padding:2px 8px" onclick="saveSubEdit(${s.id})">OK</button>
+            <button class="btn"         style="font-size:10px;padding:2px 8px" onclick="cancelSubEdit()">✕</button>
+          </div>
+        </div>
+      </div>`;
+    return`
+      <div class="sub" id="sub_${s.id}">
+        <div class="checkbox${s.done?" checked":""}" onclick="toggleSub(${s.id})"></div>
+        <div class="sub-body">
+          <span class="sub-text${s.done?" done":""}" onclick="toggleSub(${s.id})">${s.text}</span>
+          ${editMode?`
+          <div class="sub-meta">
+            <select class="edit-select" style="font-size:10px;padding:1px 5px;min-width:46px"
+                    onchange="changeSubOwner(${s.id},this.value)">${ownerOpts(s.owner)}</select>
+            <button class="btn" style="font-size:10px;padding:1px 7px" onclick="startSubEdit(${s.id})">✏️</button>
+            <button class="btn danger" style="font-size:10px;padding:1px 7px;display:inline" onclick="delSub(${s.id})">✕</button>
+          </div>`:`<div class="sub-meta"><span class="sub-owner-label">${s.owner}</span></div>`}
+        </div>
+      </div>`;
+  }).join("");
+
+  const progressHtml=total?`
+    <div class="progress-label">${doneCount}/${total} выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${pct}%"></div></div>`:"";
+
+  const divider=(total>0||editMode)?`<hr class="section-divider">`:"";
+
+  const addSubRow=`
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_${task.id}" placeholder="+ Подзадача"
+             onkeydown="if(event.key==='Enter')addSub(${task.id})">
+      <select class="edit-select" id="nso_${task.id}" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(${task.id})">Ок</button>
+    </div>`;
+
+  const controls=`
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(${task.id})">✏️ Изменить задачу</button>
+    </div>`;
+
+  return`<div class="card${vis}" data-priority="${task.priority}" id="card_${task.id}">
+    <div class="card-name">${task.name}</div>
+    <div class="card-meta">
+      ${ppill(task.priority)}
+      ${task.deadline?`<span class="pill pill-dl${task.deadlineHot?" hot":""}">📅 ${task.deadline}</span>`:""}
+    </div>
+    ${divider}${progressHtml}${subsHtml}${addSubRow}
+    <hr class="section-divider">${commentBlock(task)}
+    ${controls}${inlineEditPanel(task)}
+  </div>`;
+}
+
+function render(){
+  const board=document.getElementById("board");
+  board.innerHTML=COLS.map(col=>{
+    const tasks=TASKS.filter(t=>t.status===col.key);
+    const vc=tasks.filter(taskVisible).length;
+    const addForm=`
+      <div class="add-task-form">
+        <input class="edit-input" id="nt_${col.key}" placeholder="Название задачи"
+               onkeydown="if(event.key==='Enter')addTask('${col.key}')">
+        <div class="edit-row">
+          <select class="edit-select" id="np_${col.key}">
+            <option value="high">🔴 High</option><option value="medium" selected>🟡 Medium</option><option value="low">⚪ Low</option>
+          </select>
+          <select class="edit-select" id="no_${col.key}">
+            <option value="Manager">Manager</option><option value="Assistant" selected>Assistant</option><option value="Both">Both</option>
+          </select>
+          <input class="edit-input" id="nd_${col.key}" placeholder="дедлайн" style="margin:0;width:80px">
+        </div>
+        <button class="btn primary" onclick="addTask('${col.key}')">+ Задача</button>
+      </div>`;
+    const cards=tasks.map(renderCard).join("")||`<div class="col-empty">Нет задач</div>`;
+    return`<div class="col${editMode?" edit-mode":""}" data-status="${col.key}">
+      <div class="col-header">
+        <span class="col-title">${col.label}</span>
+        <span class="col-badge">${vc}</span>
+      </div>
+      ${addForm}${cards}
+    </div>`;
+  }).join("");
+}
+
+/* ── subtasks ── */
+let _autoSaveTimer=null;
+function toggleSub(id){
+  const r=findSub(id);if(r)r.s.done=!r.s.done;render();
+  clearTimeout(_autoSaveTimer);
+  _autoSaveTimer=setTimeout(()=>saveToGitHub(true),1500);
+}
+function delSub(id){const r=findSub(id);if(r)r.t.subs=r.t.subs.filter(s=>s.id!==id);render()}
+function changeSubOwner(id,v){const r=findSub(id);if(r)r.s.owner=v;}
+
+function addSub(taskId){
+  const inp=document.getElementById(`ns_${taskId}`);
+  const text=inp?.value.trim();if(!text)return;
+  const owner=document.getElementById(`nso_${taskId}`)?.value||"Ast";
+  const t=getTask(taskId);
+  if(t)t.subs.push({id:nid(),text,done:false,owner});
+  render();
+}
+
+function startSubEdit(id){
+  editingSubId=id;openEditId=null;editingCommentId=null;render();
+  setTimeout(()=>{const inp=document.getElementById(`sei_${id}`);if(inp){inp.focus();inp.select();}},30);
+}
+function cancelSubEdit(){editingSubId=null;render()}
+function saveSubEdit(id){
+  const r=findSub(id);if(!r)return;
+  const text=document.getElementById(`sei_${id}`)?.value.trim();
+  if(text)r.s.text=text;
+  const owner=document.getElementById(`seo_${id}`)?.value;
+  if(owner)r.s.owner=owner;
+  editingSubId=null;render();
+}
+
+/* ── tasks ── */
+function addTask(status){
+  const name=document.getElementById(`nt_${status}`)?.value.trim();if(!name)return;
+  const priority=document.getElementById(`np_${status}`)?.value||"medium";
+  const owner=document.getElementById(`no_${status}`)?.value||"Assistant";
+  const deadline=document.getElementById(`nd_${status}`)?.value.trim()||"";
+  TASKS.push({id:nid(),name,priority,deadline,deadlineHot:false,status,owner,comment:"",subs:[]});
+  render();
+}
+function delTask(id){
+  if(!confirm("Удалить задачу?"))return;
+  TASKS=TASKS.filter(t=>t.id!==id);openEditId=null;render();
+}
+
+/* ── comments ── */
+function editComment(id){editingCommentId=id;openEditId=null;editingSubId=null;render();
+  setTimeout(()=>{const ta=document.getElementById(`ct_${id}`);if(ta){ta.focus();ta.setSelectionRange(ta.value.length,ta.value.length);}},30);}
+function cancelComment(){editingCommentId=null;render()}
+function saveComment(id){
+  const t=getTask(id);if(!t)return;
+  t.comment=(document.getElementById(`ct_${id}`)?.value||"").trim();
+  editingCommentId=null;render();
+}
+
+/* ── card edit ── */
+function openEdit(id){
+  openEditId=openEditId===id?null:id;editingCommentId=null;editingSubId=null;render();
+  if(openEditId===id)setTimeout(()=>document.getElementById(`ie_name_${id}`)?.focus(),50);
+}
+function cancelEdit(id){openEditId=null;render()}
+function applyEdit(id){
+  const t=getTask(id);if(!t)return;
+  const name=document.getElementById(`ie_name_${id}`)?.value.trim();if(name)t.name=name;
+  const st=document.getElementById(`ie_st_${id}`)?.value;if(st)t.status=st;
+  const pr=document.getElementById(`ie_pr_${id}`)?.value;if(pr)t.priority=pr;
+  const ow=document.getElementById(`ie_ow_${id}`)?.value;if(ow)t.owner=ow;
+  t.deadline=document.getElementById(`ie_dl_${id}`)?.value.trim()||"";
+  t.deadlineHot=document.getElementById(`ie_hot_${id}`)?.checked||false;
+  openEditId=null;render();
+}
+
+function toggleEdit(){
+  editMode=!editMode;openEditId=null;editingCommentId=null;editingSubId=null;
+  document.getElementById("editBtn").textContent=editMode?"✅ Готово":"✏️ Редактировать";
+  render();
+}
+function setFilter(f){
+  currentFilter=f;
+  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.toggle("active",b.dataset.filter===f));
+  render();
+}
+
+/* ── github ── */
+const GH_TOKEN="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";
+const GH_REPO ="salnikovart511/Projects";
+const GH_FILE ="index.html";
+
+function toggleGhBanner(){document.getElementById("ghBanner").classList.toggle("visible");}
+function setStatus(msg,cls){
+  const el=document.getElementById("saveStatus");
+  el.textContent=msg;el.className="save-status "+(cls||"");
+  if(cls==="ok")setTimeout(()=>{el.textContent="";el.className="save-status";},3000);
+}
+
+async function saveToGitHub(silent=false){
+  const btn=document.getElementById("saveBtn");
+  if(btn)btn.disabled=true;
+  if(!silent)setStatus("Сохраняем…","saving");
+  try{
+    const url=`https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`;
+    const h={"Authorization":`Bearer ${GH_TOKEN}`,"Accept":"application/vnd.github+json"};
+    const getRes=await fetch(url,{headers:h});
+    if(!getRes.ok){const e=await getRes.json();throw new Error(e.message||getRes.status);}
+    const{sha}=await getRes.json();
+    const tasksJson=JSON.stringify(TASKS,null,2);
+
+    // Снимок с чистым UI
+    const _eM=editMode,_oE=openEditId,_eC=editingCommentId,_eS=editingSubId;
+    editMode=false;openEditId=null;editingCommentId=null;editingSubId=null;
+    render();
+    document.getElementById("saveStatus").textContent="";
+    document.getElementById("saveStatus").className="save-status";
+    document.getElementById("editBtn").textContent="✏️ Редактировать";
+    document.getElementById("ghBanner").classList.remove("visible");
+
+    const newHtml=document.documentElement.outerHTML.replace(
+      /let TASKS = \[[\s\S]*?\];/,`let TASKS = ${tasksJson};`
+    );
+
+    // Восстанавливаем
+    editMode=_eM;openEditId=_oE;editingCommentId=_eC;editingSubId=_eS;
+    render();
+    document.getElementById("editBtn").textContent=editMode?"✅ Готово":"✏️ Редактировать";
+
+    const encoded=btoa(unescape(encodeURIComponent(newHtml)));
+    const putRes=await fetch(url,{
+      method:"PUT",headers:{...h,"Content-Type":"application/json"},
+      body:JSON.stringify({message:`update tasks ${new Date().toLocaleString("ru")}`,content:encoded,sha})
+    });
+    if(!putRes.ok){const e=await putRes.json();throw new Error(e.message||putRes.status);}
+    setStatus(silent?"✓":"Изменения сохранены ✓","ok");
+  }catch(err){
+    setStatus("Ошибка: "+err.message,"err");
+  }finally{
+    if(btn)btn.disabled=false;
+  }
+}
+
+render();
+</script>
+</body>
+</html>
