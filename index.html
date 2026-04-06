@@ -159,493 +159,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   <button class="filter-btn" data-filter="Both" onclick="setFilter('Both')">Совместно</button>
 </div>
 
-<div class="board" id="board"><div class="col edit-mode" data-status="inprogress">
-      <div class="col-header">
-        <span class="col-title">🔄 In progress</span>
-        <span class="col-badge">2</span>
-      </div>
-      
-      <div class="add-task-form">
-        <input class="edit-input" id="nt_inprogress" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('inprogress')">
-        <div class="edit-row">
-          <select class="edit-select" id="np_inprogress">
-            <option value="high">🔴 High</option>
-            <option value="medium" selected="">🟡 Medium</option>
-            <option value="low">⚪ Low</option>
-          </select>
-          <select class="edit-select" id="no_inprogress">
-            <option value="Manager">Manager</option>
-            <option value="Assistant" selected="">Assistant</option>
-            <option value="Both">Both</option>
-          </select>
-          <input class="edit-input" id="nd_inprogress" placeholder="дедлайн" style="margin:0;width:80px">
-        </div>
-        <button class="btn primary" onclick="addTask('inprogress')">+ Задача</button>
-      </div><div class="card" data-priority="high" id="card_1">
-    <div class="card-name">Создать презентацию (short + long version)</div>
-    <div class="card-meta">
-      <span class="pill pill-high">High</span>
-      <span class="pill pill-dl hot">📅 27 мар</span>
-    </div>
-    <hr class="subtasks-divider">
-    <div class="progress-label">1/1 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
-    <div class="sub sub-clickable" onclick="toggleSub(11)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Выбрать дизайнера</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(11)">✕</span></span>
-      </div>
-    </div>
-    <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_1" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(1)">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(1)">Ок</button>
-    </div>
-    <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(1)">✏️ Изменить</button>
-    </div>
-    
-  <div class="inline-edit" id="ie_1">
-    <div class="ie-row">
-      <span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_1" value="Создать презентацию (short + long version)" onkeydown="if(event.key==='Enter')applyEdit(1)">
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_1"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_1">
-        <option value="high" selected="">🔴 High</option>
-        <option value="medium">🟡 Medium</option>
-        <option value="low">⚪ Low</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_1">
-        <option value="Manager">Manager</option>
-        <option value="Assistant" selected="">Assistant</option>
-        <option value="Both">Both</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_1" value="27 мар" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(1)">
-      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_1" checked="" style="cursor:pointer"> горит
-      </label>
-    </div>
-    <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(1)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(1)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(1)">Отмена</button>
-    </div>
-  </div>
-  </div><div class="card" data-priority="high" id="card_2">
-    <div class="card-name">Аутрич для клиентов (сегмент А/B)</div>
-    <div class="card-meta">
-      <span class="pill pill-high">High</span>
-      <span class="pill pill-dl hot">📅 29 мар</span>
-    </div>
-    <hr class="subtasks-divider">
-    <div class="progress-label">4/5 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:80%"></div></div>
-    <div class="sub sub-clickable" onclick="toggleSub(21)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Анализ Озон Фарма + промпт для анализа</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(21)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(22)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Структура аутрича Озон Фарма + промпт</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(22)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(23)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Ветки по компаниям в Claude + Диск</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(23)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(24)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Письма под Амедарт</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(24)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(25)">
-      <div class="checkbox"></div>
-      <div class="sub-right">
-        <span class="sub-text">Найти контакты ЛПР</span>
-        <span class="sub-owner">Both <span class="sub-del" onclick="event.stopPropagation();delSub(25)">✕</span></span>
-      </div>
-    </div>
-    <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_2" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(2)">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(2)">Ок</button>
-    </div>
-    <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(2)">✏️ Изменить</button>
-    </div>
-    
-  <div class="inline-edit" id="ie_2">
-    <div class="ie-row">
-      <span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_2" value="Аутрич для клиентов (сегмент А/B)" onkeydown="if(event.key==='Enter')applyEdit(2)">
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_2"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_2">
-        <option value="high" selected="">🔴 High</option>
-        <option value="medium">🟡 Medium</option>
-        <option value="low">⚪ Low</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_2">
-        <option value="Manager">Manager</option>
-        <option value="Assistant" selected="">Assistant</option>
-        <option value="Both">Both</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_2" value="29 мар" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(2)">
-      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_2" checked="" style="cursor:pointer"> горит
-      </label>
-    </div>
-    <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(2)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(2)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(2)">Отмена</button>
-    </div>
-  </div>
-  </div>
-    </div><div class="col edit-mode" data-status="inbox">
-      <div class="col-header">
-        <span class="col-title">📥 Inbox</span>
-        <span class="col-badge">1</span>
-      </div>
-      
-      <div class="add-task-form">
-        <input class="edit-input" id="nt_inbox" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('inbox')">
-        <div class="edit-row">
-          <select class="edit-select" id="np_inbox">
-            <option value="high">🔴 High</option>
-            <option value="medium" selected="">🟡 Medium</option>
-            <option value="low">⚪ Low</option>
-          </select>
-          <select class="edit-select" id="no_inbox">
-            <option value="Manager">Manager</option>
-            <option value="Assistant" selected="">Assistant</option>
-            <option value="Both">Both</option>
-          </select>
-          <input class="edit-input" id="nd_inbox" placeholder="дедлайн" style="margin:0;width:80px">
-        </div>
-        <button class="btn primary" onclick="addTask('inbox')">+ Задача</button>
-      </div><div class="card" data-priority="medium" id="card_3">
-    <div class="card-name">AI-система для планирования</div>
-    <div class="card-meta">
-      <span class="pill pill-medium">Medium</span>
-      <span class="pill pill-dl">📅 4 апр</span>
-    </div>
-    <hr class="subtasks-divider">
-    <div class="progress-label">2/5 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:40%"></div></div>
-    <div class="sub sub-clickable" onclick="toggleSub(31)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Выбрать структуру системы</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(31)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(32)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Создать бэклог</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(32)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(33)">
-      <div class="checkbox"></div>
-      <div class="sub-right">
-        <span class="sub-text">Настроить ТГ бот + Notion</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(33)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(34)">
-      <div class="checkbox"></div>
-      <div class="sub-right">
-        <span class="sub-text">Подключить Reclaim.ai</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(34)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(35)">
-      <div class="checkbox"></div>
-      <div class="sub-right">
-        <span class="sub-text">Протестировать полный цикл</span>
-        <span class="sub-owner">Both <span class="sub-del" onclick="event.stopPropagation();delSub(35)">✕</span></span>
-      </div>
-    </div>
-    <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_3" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(3)">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(3)">Ок</button>
-    </div>
-    <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(3)">✏️ Изменить</button>
-    </div>
-    
-  <div class="inline-edit open" id="ie_3">
-    <div class="ie-row">
-      <span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_3" value="AI-система для планирования" onkeydown="if(event.key==='Enter')applyEdit(3)">
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_3"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_3">
-        <option value="high">🔴 High</option>
-        <option value="medium" selected="">🟡 Medium</option>
-        <option value="low">⚪ Low</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_3">
-        <option value="Manager">Manager</option>
-        <option value="Assistant" selected="">Assistant</option>
-        <option value="Both">Both</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_3" value="4 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(3)">
-      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_3" style="cursor:pointer"> горит
-      </label>
-    </div>
-    <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(3)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(3)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(3)">Отмена</button>
-    </div>
-  </div>
-  </div>
-    </div><div class="col edit-mode" data-status="plans">
-      <div class="col-header">
-        <span class="col-title">📋 Plans</span>
-        <span class="col-badge">1</span>
-      </div>
-      
-      <div class="add-task-form">
-        <input class="edit-input" id="nt_plans" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('plans')">
-        <div class="edit-row">
-          <select class="edit-select" id="np_plans">
-            <option value="high">🔴 High</option>
-            <option value="medium" selected="">🟡 Medium</option>
-            <option value="low">⚪ Low</option>
-          </select>
-          <select class="edit-select" id="no_plans">
-            <option value="Manager">Manager</option>
-            <option value="Assistant" selected="">Assistant</option>
-            <option value="Both">Both</option>
-          </select>
-          <input class="edit-input" id="nd_plans" placeholder="дедлайн" style="margin:0;width:80px">
-        </div>
-        <button class="btn primary" onclick="addTask('plans')">+ Задача</button>
-      </div><div class="card" data-priority="medium" id="card_205">
-    <div class="card-name">Выстроить эффективное расписание дня руководителя</div>
-    <div class="card-meta">
-      <span class="pill pill-medium">Medium</span>
-      <span class="pill pill-dl">📅 11 апреля</span>
-    </div>
-    <hr class="subtasks-divider">
-    <div class="progress-label">0/2 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
-    <div class="sub sub-clickable" onclick="toggleSub(206)">
-      <div class="checkbox"></div>
-      <div class="sub-right">
-        <span class="sub-text">Изучить техники эффективной работы</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(206)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(207)">
-      <div class="checkbox"></div>
-      <div class="sub-right">
-        <span class="sub-text">Внедрить разбиение задачи на операционные действия</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(207)">✕</span></span>
-      </div>
-    </div>
-    <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_205" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(205)">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(205)">Ок</button>
-    </div>
-    <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(205)">✏️ Изменить</button>
-    </div>
-    
-  <div class="inline-edit" id="ie_205">
-    <div class="ie-row">
-      <span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_205" value="Выстроить эффективное расписание дня руководителя" onkeydown="if(event.key==='Enter')applyEdit(205)">
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_205"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans" selected="">📋 Plans</option><option value="done">✔ Done</option></select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_205">
-        <option value="high">🔴 High</option>
-        <option value="medium" selected="">🟡 Medium</option>
-        <option value="low">⚪ Low</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_205">
-        <option value="Manager">Manager</option>
-        <option value="Assistant" selected="">Assistant</option>
-        <option value="Both">Both</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_205" value="11 апреля" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(205)">
-      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_205" style="cursor:pointer"> горит
-      </label>
-    </div>
-    <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(205)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(205)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(205)">Отмена</button>
-    </div>
-  </div>
-  </div>
-    </div><div class="col edit-mode" data-status="done">
-      <div class="col-header">
-        <span class="col-title">✔ Done</span>
-        <span class="col-badge">1</span>
-      </div>
-      
-      <div class="add-task-form">
-        <input class="edit-input" id="nt_done" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('done')">
-        <div class="edit-row">
-          <select class="edit-select" id="np_done">
-            <option value="high">🔴 High</option>
-            <option value="medium" selected="">🟡 Medium</option>
-            <option value="low">⚪ Low</option>
-          </select>
-          <select class="edit-select" id="no_done">
-            <option value="Manager">Manager</option>
-            <option value="Assistant" selected="">Assistant</option>
-            <option value="Both">Both</option>
-          </select>
-          <input class="edit-input" id="nd_done" placeholder="дедлайн" style="margin:0;width:80px">
-        </div>
-        <button class="btn primary" onclick="addTask('done')">+ Задача</button>
-      </div><div class="card" data-priority="high" id="card_4">
-    <div class="card-name">Подписать шаблон NDA</div>
-    <div class="card-meta">
-      <span class="pill pill-high">High</span>
-      <span class="pill pill-dl hot">📅 25 мар</span>
-    </div>
-    <hr class="subtasks-divider">
-    <div class="progress-label">4/4 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
-    <div class="sub sub-clickable" onclick="toggleSub(201)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Создать шаблон NDA</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(201)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(202)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Отредактировать</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(202)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(203)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Получить все личные данные</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(203)">✕</span></span>
-      </div>
-    </div>
-    <div class="sub sub-clickable" onclick="toggleSub(204)">
-      <div class="checkbox checked"></div>
-      <div class="sub-right">
-        <span class="sub-text done">Подписать, отсканировать и отправить</span>
-        <span class="sub-owner">Ast <span class="sub-del" onclick="event.stopPropagation();delSub(204)">✕</span></span>
-      </div>
-    </div>
-    <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_4" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(4)">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(4)">Ок</button>
-    </div>
-    <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(4)">✏️ Изменить</button>
-    </div>
-    
-  <div class="inline-edit" id="ie_4">
-    <div class="ie-row">
-      <span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_4" value="Подписать шаблон NDA" onkeydown="if(event.key==='Enter')applyEdit(4)">
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_4"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done" selected="">✔ Done</option></select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_4">
-        <option value="high" selected="">🔴 High</option>
-        <option value="medium">🟡 Medium</option>
-        <option value="low">⚪ Low</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_4">
-        <option value="Manager">Manager</option>
-        <option value="Assistant" selected="">Assistant</option>
-        <option value="Both">Both</option>
-      </select>
-    </div>
-    <div class="ie-row">
-      <span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_4" value="25 мар" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(4)">
-      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_4" checked="" style="cursor:pointer"> горит
-      </label>
-    </div>
-    <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(4)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(4)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(4)">Отмена</button>
-    </div>
-  </div>
-  </div>
-    </div></div>
+<div class="board" id="board"></div>
 
 <script>
 let TASKS = [
@@ -653,7 +167,7 @@ let TASKS = [
     "id": 1,
     "name": "Создать презентацию (short + long version)",
     "priority": "high",
-    "deadline": "27 мар",
+    "deadline": "9 апр",
     "deadlineHot": true,
     "status": "inprogress",
     "owner": "Assistant",
@@ -662,6 +176,54 @@ let TASKS = [
         "id": 11,
         "text": "Выбрать дизайнера",
         "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 201,
+        "text": "Согласовать условия и отдать в работу",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 202,
+        "text": "Доработать текст слайдов",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 203,
+        "text": "Завершить работу с дизайнером, оплатить работу и взять исходники",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 204,
+        "text": "Сделать открывающий и закрывающий слайды",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 205,
+        "text": "Собрать короткую версию презентации",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 206,
+        "text": "Внести правки по короткой версии",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 207,
+        "text": "Собрать полную версию презентации",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 208,
+        "text": "Внести правки по полной версии",
+        "done": false,
         "owner": "Ast"
       }
     ]
@@ -711,7 +273,7 @@ let TASKS = [
     "id": 3,
     "name": "AI-система для планирования",
     "priority": "medium",
-    "deadline": "4 апр",
+    "deadline": "13 апр",
     "deadlineHot": false,
     "status": "inbox",
     "owner": "Assistant",
@@ -735,16 +297,16 @@ let TASKS = [
         "owner": "Ast"
       },
       {
-        "id": 34,
-        "text": "Подключить Reclaim.ai",
+        "id": 209,
+        "text": "Связать Notion через ИИ с Google Календарём",
         "done": false,
         "owner": "Ast"
       },
       {
-        "id": 35,
-        "text": "Протестировать полный цикл",
+        "id": 210,
+        "text": "Проверить и доработать систему",
         "done": false,
-        "owner": "Both"
+        "owner": "Ast"
       }
     ]
   },
@@ -801,6 +363,12 @@ let TASKS = [
       {
         "id": 207,
         "text": "Внедрить разбиение задачи на операционные действия",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 211,
+        "text": "Получить в календаре руководителя список операционных задач на день с учётом всех техник",
         "done": false,
         "owner": "Ast"
       }
@@ -1121,6 +689,7 @@ async function saveToGitHub(){
 
 render();
 </script>
+
 
 
 </body></html>
