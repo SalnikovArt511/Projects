@@ -861,7 +861,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <span class="pill pill-dl hot">📅 27 мар</span>
     </div>
     <hr class="section-divider">
-    <div class="progress-label">4/4 выполнено</div>
+    <div class="progress-label">5/5 выполнено</div>
     <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
       <div class="sub" id="sub_201">
         <div class="checkbox checked" onclick="toggleSub(201)"></div>
@@ -889,6 +889,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         <div class="sub-body">
           <span class="sub-text done" onclick="toggleSub(204)">Подписать, отсканировать и отправить</span>
           <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_401">
+        <div class="checkbox checked" onclick="toggleSub(401)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(401)">Подписать руководителю</span>
+          <div class="sub-meta"><span class="sub-owner-label">Mgr</span></div>
         </div>
       </div>
     <div class="add-sub-row">
@@ -1214,6 +1221,12 @@ let TASKS = [
         "text": "Подписать, отсканировать и отправить",
         "done": true,
         "owner": "Ast"
+      },
+      {
+        "id": 401,
+        "text": "Подписать руководителю",
+        "done": true,
+        "owner": "Mgr"
       }
     ]
   },
