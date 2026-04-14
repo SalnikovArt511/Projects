@@ -195,8 +195,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <span class="pill pill-dl hot">📅 9 апр</span>
     </div>
     <hr class="section-divider">
-    <div class="progress-label">7/9 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:78%"></div></div>
+    <div class="progress-label">8/9 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:89%"></div></div>
       <div class="sub" id="sub_11">
         <div class="checkbox checked" onclick="toggleSub(11)"></div>
         <div class="sub-body">
@@ -247,9 +247,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
       <div class="sub" id="sub_320">
-        <div class="checkbox" onclick="toggleSub(320)"></div>
+        <div class="checkbox checked" onclick="toggleSub(320)"></div>
         <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(320)">Внести правки по полной презентации</span>
+          <span class="sub-text done" onclick="toggleSub(320)">Внести правки по полной презентации</span>
           <div class="sub-meta"><span class="sub-owner-label">Both</span></div>
         </div>
       </div>
@@ -307,8 +307,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <span class="pill pill-dl hot">📅 13 апр</span>
     </div>
     <hr class="section-divider">
-    <div class="progress-label">4/6 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:67%"></div></div>
+    <div class="progress-label">5/6 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:83%"></div></div>
       <div class="sub" id="sub_21">
         <div class="checkbox checked" onclick="toggleSub(21)"></div>
         <div class="sub-body">
@@ -338,9 +338,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
       <div class="sub" id="sub_322">
-        <div class="checkbox" onclick="toggleSub(322)"></div>
+        <div class="checkbox checked" onclick="toggleSub(322)"></div>
         <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(322)">На этой неделе отправка писем: текст+преза+продукт лист</span>
+          <span class="sub-text done" onclick="toggleSub(322)">На этой неделе отправка писем: текст+преза+продукт лист</span>
           <div class="sub-meta"><span class="sub-owner-label">Mgr</span></div>
         </div>
       </div>
@@ -1005,7 +1005,7 @@ let TASKS = [
       {
         "id": 320,
         "text": "Внести правки по полной презентации",
-        "done": false,
+        "done": true,
         "owner": "Both"
       },
       {
@@ -1053,7 +1053,7 @@ let TASKS = [
       {
         "id": 322,
         "text": "На этой неделе отправка писем: текст+преза+продукт лист",
-        "done": false,
+        "done": true,
         "owner": "Mgr"
       },
       {
@@ -1624,4 +1624,5 @@ async function saveToGitHub(silent=false){
 
 render();
 </script>
+
 </body></html>
