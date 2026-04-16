@@ -458,7 +458,100 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(3)">Отмена</button>
     </div>
   </div>
-  </div><div class="card" data-priority="medium" id="card_311">
+  </div><div class="card" data-priority="medium" id="card_609">
+    <div class="card-name">Дерево гипотез (когда нужен техтрансфер?)</div>
+    <div class="card-meta">
+      <span class="pill pill-medium">Medium</span>
+      <span class="pill pill-dl">📅 26 апр</span>
+    </div>
+    <hr class="section-divider">
+    <div class="progress-label">0/3 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <div class="sub" id="sub_610">
+        <div class="checkbox" onclick="toggleSub(610)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(610)">Поискать инструменты, что быстро достать эту инфу</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_611">
+        <div class="checkbox" onclick="toggleSub(611)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(611)">Сформировать список: продукт-почему внесли-компания</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_612">
+        <div class="checkbox" onclick="toggleSub(612)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(612)">Через ии прогнать список и сформировать стратегию, гипотезы для выхода к ним с предложением по техтрансферу</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_609" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(609)">
+      <select class="edit-select" id="nso_609" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(609)">Ок</button>
+    </div>
+    <hr class="section-divider">
+    <div class="comment-block">
+      <div class="comment-text">Берем наш продуктовый лист и рос реестр с компаниями и зарегистрированными препаратами, смотрим у кого что зарегистрировано и когда заканчивается срок действия, потом прогоняем через иишку</div>
+      
+    </div>
+    
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(609)">✏️ Изменить задачу</button>
+    </div>
+  <div class="inline-edit" id="ie_609">
+    <div class="ie-row"><span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_609" value="Дерево гипотез (когда нужен техтрансфер?)" onkeydown="if(event.key==='Enter')applyEdit(609)"></div>
+    <div class="ie-row"><span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_609"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
+    <div class="ie-row"><span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_609">
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_609">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_609" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(609)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_609" style="cursor:pointer"> горит
+      </label></div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(609)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(609)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(609)">Отмена</button>
+    </div>
+  </div>
+  </div>
+    </div><div class="col" data-status="plans">
+      <div class="col-header">
+        <span class="col-title">📋 Plans</span>
+        <span class="col-badge">3</span>
+      </div>
+      
+      <div class="add-task-form">
+        <input class="edit-input" id="nt_plans" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('plans')">
+        <div class="edit-row">
+          <select class="edit-select" id="np_plans">
+            <option value="high">🔴 High</option><option value="medium" selected="">🟡 Medium</option><option value="low">⚪ Low</option>
+          </select>
+          <select class="edit-select" id="no_plans">
+            <option value="Manager">Manager</option><option value="Assistant" selected="">Assistant</option><option value="Both">Both</option>
+          </select>
+          <input class="edit-input" id="nd_plans" placeholder="дедлайн" style="margin:0;width:80px">
+        </div>
+        <button class="btn primary" onclick="addTask('plans')">+ Задача</button>
+      </div><div class="card" data-priority="medium" id="card_311">
     <div class="card-name">Создать ИИ-копирайтера</div>
     <div class="card-meta">
       <span class="pill pill-medium">Medium</span>
@@ -508,7 +601,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     <div class="ie-row"><span class="ie-label">Название</span>
       <input class="ie-input" id="ie_name_311" value="Создать ИИ-копирайтера" onkeydown="if(event.key==='Enter')applyEdit(311)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_311"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_311"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans" selected="">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_311">
         <option value="high">🔴 High</option>
@@ -532,26 +625,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(311)">Отмена</button>
     </div>
   </div>
-  </div>
-    </div><div class="col" data-status="plans">
-      <div class="col-header">
-        <span class="col-title">📋 Plans</span>
-        <span class="col-badge">2</span>
-      </div>
-      
-      <div class="add-task-form">
-        <input class="edit-input" id="nt_plans" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('plans')">
-        <div class="edit-row">
-          <select class="edit-select" id="np_plans">
-            <option value="high">🔴 High</option><option value="medium" selected="">🟡 Medium</option><option value="low">⚪ Low</option>
-          </select>
-          <select class="edit-select" id="no_plans">
-            <option value="Manager">Manager</option><option value="Assistant" selected="">Assistant</option><option value="Both">Both</option>
-          </select>
-          <input class="edit-input" id="nd_plans" placeholder="дедлайн" style="margin:0;width:80px">
-        </div>
-        <button class="btn primary" onclick="addTask('plans')">+ Задача</button>
-      </div><div class="card" data-priority="medium" id="card_205">
+  </div><div class="card" data-priority="medium" id="card_205">
     <div class="card-name">Выстроить эффективное расписание дня руководителя</div>
     <div class="card-meta">
       <span class="pill pill-medium">Medium</span>
@@ -1202,7 +1276,7 @@ let TASKS = [
     "priority": "medium",
     "deadline": "13 апр",
     "deadlineHot": false,
-    "status": "inbox",
+    "status": "plans",
     "owner": "Assistant",
     "comment": "Использовать несколько ИИ-агентов, которые усиливают итерациями текст и делают его понятным и читаемым",
     "subs": [
@@ -1406,6 +1480,36 @@ let TASKS = [
       {
         "id": 608,
         "text": "Утвердить план и сделать письма по неделям, оформить в удобной табличке",
+        "done": false,
+        "owner": "Ast"
+      }
+    ]
+  },
+  {
+    "id": 609,
+    "name": "Дерево гипотез (когда нужен техтрансфер?)",
+    "priority": "medium",
+    "deadline": "26 апр",
+    "deadlineHot": false,
+    "status": "inbox",
+    "owner": "Assistant",
+    "comment": "Берем наш продуктовый лист и рос реестр с компаниями и зарегистрированными препаратами, смотрим у кого что зарегистрировано и когда заканчивается срок действия, потом прогоняем через иишку",
+    "subs": [
+      {
+        "id": 610,
+        "text": "Поискать инструменты, что быстро достать эту инфу",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 611,
+        "text": "Сформировать список: продукт-почему внесли-компания",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 612,
+        "text": "Через ии прогнать список и сформировать стратегию, гипотезы для выхода к ним с предложением по техтрансферу",
         "done": false,
         "owner": "Ast"
       }
