@@ -178,14 +178,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       </div>
       
       <div class="add-task-form">
-        <input class="edit-input" id="nt_inprogress" placeholder="Название задачи"
-               onkeydown="if(event.key==='Enter')addTask('inprogress')">
+        <input class="edit-input" id="nt_inprogress" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('inprogress')">
         <div class="edit-row">
           <select class="edit-select" id="np_inprogress">
-            <option value="high">🔴 High</option><option value="medium" selected>🟡 Medium</option><option value="low">⚪ Low</option>
+            <option value="high">🔴 High</option><option value="medium" selected="">🟡 Medium</option><option value="low">⚪ Low</option>
           </select>
           <select class="edit-select" id="no_inprogress">
-            <option value="Manager">Manager</option><option value="Assistant" selected>Assistant</option><option value="Both">Both</option>
+            <option value="Manager">Manager</option><option value="Assistant" selected="">Assistant</option><option value="Both">Both</option>
           </select>
           <input class="edit-input" id="nd_inprogress" placeholder="дедлайн" style="margin:0;width:80px">
         </div>
@@ -228,8 +227,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_326" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(326)">
+      <input class="add-sub-input" id="ns_326" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(326)">
       <select class="edit-select" id="nso_326" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -246,32 +244,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_326">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_326" value="Оформить новый продукт лист"
-             onkeydown="if(event.key==='Enter')applyEdit(326)"></div>
+      <input class="ie-input" id="ie_name_326" value="Оформить новый продукт лист" onkeydown="if(event.key==='Enter')applyEdit(326)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_326"><option value="inprogress" selected>🔄 In progress</option><option value="inbox" >📥 Inbox</option><option value="plans" >📋 Plans</option><option value="done" >✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_326"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_326">
-        <option value="high"   >🔴 High</option>
-        <option value="medium" selected>🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_326">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_326" value="" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(326)">
+      <input class="ie-input" id="ie_dl_326" value="" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(326)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_326"  style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_326" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(326)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(326)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(326)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(326)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(326)">Отмена</button>
     </div>
   </div>
   </div><div class="card" data-priority="medium" id="card_604">
@@ -312,8 +308,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_604" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(604)">
+      <input class="add-sub-input" id="ns_604" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(604)">
       <select class="edit-select" id="nso_604" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -330,32 +325,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_604">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_604" value="Сделать контент план писем (выставка в Шанхае)"
-             onkeydown="if(event.key==='Enter')applyEdit(604)"></div>
+      <input class="ie-input" id="ie_name_604" value="Сделать контент план писем (выставка в Шанхае)" onkeydown="if(event.key==='Enter')applyEdit(604)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_604"><option value="inprogress" selected>🔄 In progress</option><option value="inbox" >📥 Inbox</option><option value="plans" >📋 Plans</option><option value="done" >✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_604"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_604">
-        <option value="high"   >🔴 High</option>
-        <option value="medium" selected>🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_604">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_604" value="26 апр" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(604)">
+      <input class="ie-input" id="ie_dl_604" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(604)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_604"  style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_604" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(604)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(604)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(604)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(604)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(604)">Отмена</button>
     </div>
   </div>
   </div>
@@ -366,14 +359,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       </div>
       
       <div class="add-task-form">
-        <input class="edit-input" id="nt_inbox" placeholder="Название задачи"
-               onkeydown="if(event.key==='Enter')addTask('inbox')">
+        <input class="edit-input" id="nt_inbox" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('inbox')">
         <div class="edit-row">
           <select class="edit-select" id="np_inbox">
-            <option value="high">🔴 High</option><option value="medium" selected>🟡 Medium</option><option value="low">⚪ Low</option>
+            <option value="high">🔴 High</option><option value="medium" selected="">🟡 Medium</option><option value="low">⚪ Low</option>
           </select>
           <select class="edit-select" id="no_inbox">
-            <option value="Manager">Manager</option><option value="Assistant" selected>Assistant</option><option value="Both">Both</option>
+            <option value="Manager">Manager</option><option value="Assistant" selected="">Assistant</option><option value="Both">Both</option>
           </select>
           <input class="edit-input" id="nd_inbox" placeholder="дедлайн" style="margin:0;width:80px">
         </div>
@@ -423,8 +415,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_3" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(3)">
+      <input class="add-sub-input" id="ns_3" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(3)">
       <select class="edit-select" id="nso_3" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -441,32 +432,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_3">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_3" value="AI-система для планирования"
-             onkeydown="if(event.key==='Enter')applyEdit(3)"></div>
+      <input class="ie-input" id="ie_name_3" value="AI-система для планирования" onkeydown="if(event.key==='Enter')applyEdit(3)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_3"><option value="inprogress" >🔄 In progress</option><option value="inbox" selected>📥 Inbox</option><option value="plans" >📋 Plans</option><option value="done" >✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_3"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_3">
-        <option value="high"   >🔴 High</option>
-        <option value="medium" selected>🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_3">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_3" value="12 апр" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(3)">
+      <input class="ie-input" id="ie_dl_3" value="12 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(3)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_3"  style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_3" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(3)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(3)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(3)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(3)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(3)">Отмена</button>
     </div>
   </div>
   </div><div class="card" data-priority="medium" id="card_609">
@@ -500,8 +489,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_609" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(609)">
+      <input class="add-sub-input" id="ns_609" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(609)">
       <select class="edit-select" id="nso_609" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -518,32 +506,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_609">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_609" value="Дерево гипотез (когда нужен техтрансфер?)"
-             onkeydown="if(event.key==='Enter')applyEdit(609)"></div>
+      <input class="ie-input" id="ie_name_609" value="Дерево гипотез (когда нужен техтрансфер?)" onkeydown="if(event.key==='Enter')applyEdit(609)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_609"><option value="inprogress" >🔄 In progress</option><option value="inbox" selected>📥 Inbox</option><option value="plans" >📋 Plans</option><option value="done" >✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_609"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_609">
-        <option value="high"   >🔴 High</option>
-        <option value="medium" selected>🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_609">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_609" value="26 апр" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(609)">
+      <input class="ie-input" id="ie_dl_609" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(609)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_609"  style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_609" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(609)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(609)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(609)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(609)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(609)">Отмена</button>
     </div>
   </div>
   </div>
@@ -554,14 +540,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       </div>
       
       <div class="add-task-form">
-        <input class="edit-input" id="nt_plans" placeholder="Название задачи"
-               onkeydown="if(event.key==='Enter')addTask('plans')">
+        <input class="edit-input" id="nt_plans" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('plans')">
         <div class="edit-row">
           <select class="edit-select" id="np_plans">
-            <option value="high">🔴 High</option><option value="medium" selected>🟡 Medium</option><option value="low">⚪ Low</option>
+            <option value="high">🔴 High</option><option value="medium" selected="">🟡 Medium</option><option value="low">⚪ Low</option>
           </select>
           <select class="edit-select" id="no_plans">
-            <option value="Manager">Manager</option><option value="Assistant" selected>Assistant</option><option value="Both">Both</option>
+            <option value="Manager">Manager</option><option value="Assistant" selected="">Assistant</option><option value="Both">Both</option>
           </select>
           <input class="edit-input" id="nd_plans" placeholder="дедлайн" style="margin:0;width:80px">
         </div>
@@ -597,8 +582,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_311" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(311)">
+      <input class="add-sub-input" id="ns_311" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(311)">
       <select class="edit-select" id="nso_311" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -615,32 +599,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_311">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_311" value="Создать ИИ-копирайтера"
-             onkeydown="if(event.key==='Enter')applyEdit(311)"></div>
+      <input class="ie-input" id="ie_name_311" value="Создать ИИ-копирайтера" onkeydown="if(event.key==='Enter')applyEdit(311)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_311"><option value="inprogress" >🔄 In progress</option><option value="inbox" >📥 Inbox</option><option value="plans" selected>📋 Plans</option><option value="done" >✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_311"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans" selected="">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_311">
-        <option value="high"   >🔴 High</option>
-        <option value="medium" selected>🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_311">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_311" value="13 апр" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(311)">
+      <input class="ie-input" id="ie_dl_311" value="13 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(311)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_311"  style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_311" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(311)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(311)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(311)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(311)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(311)">Отмена</button>
     </div>
   </div>
   </div><div class="card" data-priority="medium" id="card_205">
@@ -674,8 +656,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_205" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(205)">
+      <input class="add-sub-input" id="ns_205" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(205)">
       <select class="edit-select" id="nso_205" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -688,32 +669,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_205">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_205" value="Выстроить эффективное расписание дня руководителя"
-             onkeydown="if(event.key==='Enter')applyEdit(205)"></div>
+      <input class="ie-input" id="ie_name_205" value="Выстроить эффективное расписание дня руководителя" onkeydown="if(event.key==='Enter')applyEdit(205)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_205"><option value="inprogress" >🔄 In progress</option><option value="inbox" >📥 Inbox</option><option value="plans" selected>📋 Plans</option><option value="done" >✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_205"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans" selected="">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_205">
-        <option value="high"   >🔴 High</option>
-        <option value="medium" selected>🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_205">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_205" value="" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(205)">
+      <input class="ie-input" id="ie_dl_205" value="" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(205)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_205"  style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_205" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(205)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(205)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(205)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(205)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(205)">Отмена</button>
     </div>
   </div>
   </div><div class="card" data-priority="low" id="card_315">
@@ -724,8 +703,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
     
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_315" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(315)">
+      <input class="add-sub-input" id="ns_315" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(315)">
       <select class="edit-select" id="nso_315" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -742,32 +720,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_315">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_315" value="ТГ канал / ютуб канал про фармацевтику"
-             onkeydown="if(event.key==='Enter')applyEdit(315)"></div>
+      <input class="ie-input" id="ie_name_315" value="ТГ канал / ютуб канал про фармацевтику" onkeydown="if(event.key==='Enter')applyEdit(315)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_315"><option value="inprogress" >🔄 In progress</option><option value="inbox" >📥 Inbox</option><option value="plans" selected>📋 Plans</option><option value="done" >✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_315"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans" selected="">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_315">
-        <option value="high"   >🔴 High</option>
-        <option value="medium" >🟡 Medium</option>
-        <option value="low"    selected>⚪ Low</option>
+        <option value="high">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low" selected="">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_315">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_315" value="" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(315)">
+      <input class="ie-input" id="ie_dl_315" value="" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(315)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_315"  style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_315" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(315)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(315)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(315)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(315)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(315)">Отмена</button>
     </div>
   </div>
   </div>
@@ -778,14 +754,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       </div>
       
       <div class="add-task-form">
-        <input class="edit-input" id="nt_done" placeholder="Название задачи"
-               onkeydown="if(event.key==='Enter')addTask('done')">
+        <input class="edit-input" id="nt_done" placeholder="Название задачи" onkeydown="if(event.key==='Enter')addTask('done')">
         <div class="edit-row">
           <select class="edit-select" id="np_done">
-            <option value="high">🔴 High</option><option value="medium" selected>🟡 Medium</option><option value="low">⚪ Low</option>
+            <option value="high">🔴 High</option><option value="medium" selected="">🟡 Medium</option><option value="low">⚪ Low</option>
           </select>
           <select class="edit-select" id="no_done">
-            <option value="Manager">Manager</option><option value="Assistant" selected>Assistant</option><option value="Both">Both</option>
+            <option value="Manager">Manager</option><option value="Assistant" selected="">Assistant</option><option value="Both">Both</option>
           </select>
           <input class="edit-input" id="nd_done" placeholder="дедлайн" style="margin:0;width:80px">
         </div>
@@ -863,8 +838,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_1" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(1)">
+      <input class="add-sub-input" id="ns_1" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(1)">
       <select class="edit-select" id="nso_1" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -877,32 +851,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_1">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_1" value="Создать презентацию (short + long version)"
-             onkeydown="if(event.key==='Enter')applyEdit(1)"></div>
+      <input class="ie-input" id="ie_name_1" value="Создать презентацию (short + long version)" onkeydown="if(event.key==='Enter')applyEdit(1)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_1"><option value="inprogress" >🔄 In progress</option><option value="inbox" >📥 Inbox</option><option value="plans" >📋 Plans</option><option value="done" selected>✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_1"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done" selected="">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_1">
-        <option value="high"   selected>🔴 High</option>
-        <option value="medium" >🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high" selected="">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_1">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_1" value="9 апр" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(1)">
+      <input class="ie-input" id="ie_dl_1" value="9 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(1)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_1" checked style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_1" checked="" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(1)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(1)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(1)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(1)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(1)">Отмена</button>
     </div>
   </div>
   </div><div class="card" data-priority="high" id="card_2">
@@ -950,8 +922,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_2" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(2)">
+      <input class="add-sub-input" id="ns_2" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(2)">
       <select class="edit-select" id="nso_2" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -964,32 +935,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_2">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_2" value="Сделать аутрич для компаний Амедарт и Озон Фарма"
-             onkeydown="if(event.key==='Enter')applyEdit(2)"></div>
+      <input class="ie-input" id="ie_name_2" value="Сделать аутрич для компаний Амедарт и Озон Фарма" onkeydown="if(event.key==='Enter')applyEdit(2)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_2"><option value="inprogress" >🔄 In progress</option><option value="inbox" >📥 Inbox</option><option value="plans" >📋 Plans</option><option value="done" selected>✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_2"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done" selected="">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_2">
-        <option value="high"   selected>🔴 High</option>
-        <option value="medium" >🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high" selected="">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_2">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_2" value="13 апр" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(2)">
+      <input class="ie-input" id="ie_dl_2" value="13 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(2)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_2" checked style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_2" checked="" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(2)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(2)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(2)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(2)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(2)">Отмена</button>
     </div>
   </div>
   </div><div class="card" data-priority="high" id="card_4">
@@ -1044,8 +1013,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_4" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(4)">
+      <input class="add-sub-input" id="ns_4" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(4)">
       <select class="edit-select" id="nso_4" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -1058,32 +1026,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_4">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_4" value="Подписать шаблон NDA"
-             onkeydown="if(event.key==='Enter')applyEdit(4)"></div>
+      <input class="ie-input" id="ie_name_4" value="Подписать шаблон NDA" onkeydown="if(event.key==='Enter')applyEdit(4)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_4"><option value="inprogress" >🔄 In progress</option><option value="inbox" >📥 Inbox</option><option value="plans" >📋 Plans</option><option value="done" selected>✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_4"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done" selected="">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_4">
-        <option value="high"   selected>🔴 High</option>
-        <option value="medium" >🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high" selected="">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_4">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_4" value="27 мар" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(4)">
+      <input class="ie-input" id="ie_dl_4" value="27 мар" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(4)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_4" checked style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_4" checked="" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(4)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(4)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(4)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(4)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(4)">Отмена</button>
     </div>
   </div>
   </div><div class="card" data-priority="medium" id="card_501">
@@ -1110,8 +1076,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_501" placeholder="+ Подзадача"
-             onkeydown="if(event.key==='Enter')addSub(501)">
+      <input class="add-sub-input" id="ns_501" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(501)">
       <select class="edit-select" id="nso_501" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
@@ -1124,32 +1089,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   <div class="inline-edit" id="ie_501">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_501" value="Сделать конкурентный анализ"
-             onkeydown="if(event.key==='Enter')applyEdit(501)"></div>
+      <input class="ie-input" id="ie_name_501" value="Сделать конкурентный анализ" onkeydown="if(event.key==='Enter')applyEdit(501)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_501"><option value="inprogress" >🔄 In progress</option><option value="inbox" >📥 Inbox</option><option value="plans" >📋 Plans</option><option value="done" selected>✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_501"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done" selected="">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_501">
-        <option value="high"   >🔴 High</option>
-        <option value="medium" selected>🟡 Medium</option>
-        <option value="low"    >⚪ Low</option>
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
       <select class="ie-select" id="ie_ow_501">
-        <option value="Manager"   >Manager</option>
-        <option value="Assistant" selected>Assistant</option>
-        <option value="Both"      >Both</option>
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_501" value="9 апр" placeholder="15 апр"
-             onkeydown="if(event.key==='Enter')applyEdit(501)">
+      <input class="ie-input" id="ie_dl_501" value="9 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(501)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_501"  style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_501" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(501)">Сохранить</button>
-      <button class="btn danger"  style="font-size:11px;padding:4px 12px" onclick="delTask(501)">Удалить</button>
-      <button class="btn"         style="font-size:11px;padding:4px 12px" onclick="cancelEdit(501)">Отмена</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(501)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(501)">Отмена</button>
     </div>
   </div>
   </div>
@@ -1167,15 +1130,60 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "",
     "subs": [
-      {"id": 11, "text": "Выбрать дизайнера", "done": true, "owner": "Ast"},
-      {"id": 12, "text": "Согласовать условия и отдать в работу", "done": true, "owner": "Ast"},
-      {"id": 301, "text": "Доработать текст слайдов", "done": true, "owner": "Both"},
-      {"id": 316, "text": "Закончить работу с дизайнером, оплатить, получить исходники", "done": true, "owner": "Ast"},
-      {"id": 317, "text": "Собрать короткую презентацию", "done": true, "owner": "Ast"},
-      {"id": 318, "text": "Внести правки по короткой презентации", "done": true, "owner": "Both"},
-      {"id": 319, "text": "Собрать полную презентацию", "done": true, "owner": "Ast"},
-      {"id": 320, "text": "Внести правки по полной презентации", "done": true, "owner": "Both"},
-      {"id": 321, "text": "Проверить настройки печати", "done": true, "owner": "Ast"}
+      {
+        "id": 11,
+        "text": "Выбрать дизайнера",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 12,
+        "text": "Согласовать условия и отдать в работу",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 301,
+        "text": "Доработать текст слайдов",
+        "done": true,
+        "owner": "Both"
+      },
+      {
+        "id": 316,
+        "text": "Закончить работу с дизайнером, оплатить, получить исходники",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 317,
+        "text": "Собрать короткую презентацию",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 318,
+        "text": "Внести правки по короткой презентации",
+        "done": true,
+        "owner": "Both"
+      },
+      {
+        "id": 319,
+        "text": "Собрать полную презентацию",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 320,
+        "text": "Внести правки по полной презентации",
+        "done": true,
+        "owner": "Both"
+      },
+      {
+        "id": 321,
+        "text": "Проверить настройки печати",
+        "done": true,
+        "owner": "Ast"
+      }
     ]
   },
   {
@@ -1188,11 +1196,36 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "",
     "subs": [
-      {"id": 21, "text": "Анализ Озон Фарма + промпт для анализа", "done": true, "owner": "Ast"},
-      {"id": 22, "text": "Структура аутрича Озон Фарма + промпт", "done": true, "owner": "Ast"},
-      {"id": 23, "text": "Ветки по компаниям в Claude + Диск", "done": true, "owner": "Ast"},
-      {"id": 304, "text": "Анализ амедарт + структура аутрича", "done": true, "owner": "Ast"},
-      {"id": 322, "text": "На этой неделе отправка писем: текст+преза+продукт лист", "done": true, "owner": "Mgr"}
+      {
+        "id": 21,
+        "text": "Анализ Озон Фарма + промпт для анализа",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 22,
+        "text": "Структура аутрича Озон Фарма + промпт",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 23,
+        "text": "Ветки по компаниям в Claude + Диск",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 304,
+        "text": "Анализ амедарт + структура аутрича",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 322,
+        "text": "На этой неделе отправка писем: текст+преза+продукт лист",
+        "done": true,
+        "owner": "Mgr"
+      }
     ]
   },
   {
@@ -1205,11 +1238,36 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "Добавить уведомления при закрытии или появлении новой задачи",
     "subs": [
-      {"id": 31, "text": "Выбрать структуру системы", "done": true, "owner": "Ast"},
-      {"id": 32, "text": "Создать бэклог", "done": true, "owner": "Ast"},
-      {"id": 33, "text": "Настроить ТГ бот + Notion", "done": false, "owner": "Ast"},
-      {"id": 307, "text": "Связать Notion через ИИ с Google Календарём", "done": false, "owner": "Ast"},
-      {"id": 308, "text": "Проверить и доработать систему", "done": false, "owner": "Both"}
+      {
+        "id": 31,
+        "text": "Выбрать структуру системы",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 32,
+        "text": "Создать бэклог",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 33,
+        "text": "Настроить ТГ бот + Notion",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 307,
+        "text": "Связать Notion через ИИ с Google Календарём",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 308,
+        "text": "Проверить и доработать систему",
+        "done": false,
+        "owner": "Both"
+      }
     ]
   },
   {
@@ -1222,9 +1280,24 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "Использовать несколько ИИ-агентов, которые усиливают итерациями текст и делают его понятным и читаемым",
     "subs": [
-      {"id": 312, "text": "Описать варианты, как это может работать", "done": true, "owner": "Ast"},
-      {"id": 324, "text": "Спарсить инструкции по написанию писем/постов/документов, где нам нравится текст и как человек пишет", "done": false, "owner": "Ast"},
-      {"id": 325, "text": "Протестировать на создании писем первую версию наших агентов", "done": false, "owner": "Ast"}
+      {
+        "id": 312,
+        "text": "Описать варианты, как это может работать",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 324,
+        "text": "Спарсить инструкции по написанию писем/постов/документов, где нам нравится текст и как человек пишет",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 325,
+        "text": "Протестировать на создании писем первую версию наших агентов",
+        "done": false,
+        "owner": "Ast"
+      }
     ]
   },
   {
@@ -1237,9 +1310,24 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "",
     "subs": [
-      {"id": 206, "text": "Изучить техники эффективной работы", "done": false, "owner": "Ast"},
-      {"id": 207, "text": "Внедрить разбиение задачи на операционные действия", "done": false, "owner": "Ast"},
-      {"id": 309, "text": "Получить в календаре руководителя список операционных задач на день с учётом всех техник", "done": false, "owner": "Ast"}
+      {
+        "id": 206,
+        "text": "Изучить техники эффективной работы",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 207,
+        "text": "Внедрить разбиение задачи на операционные действия",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 309,
+        "text": "Получить в календаре руководителя список операционных задач на день с учётом всех техник",
+        "done": false,
+        "owner": "Ast"
+      }
     ]
   },
   {
@@ -1263,10 +1351,30 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "Работаем ИТЕРАЦИЯМИ: черновик (что-то хорошее выдал GPT) - выношу на обсуждение - после доработки полная версия",
     "subs": [
-      {"id": 327, "text": "Сгруппировать по категориям молекулы (сильное поднять в топ, что-то опустить)", "done": true, "owner": "Ast"},
-      {"id": 601, "text": "Сделать первый вариант и отправить для обратной связи", "done": true, "owner": "Ast"},
-      {"id": 602, "text": "Доработать весь продукт лист с учётом замечаний", "done": false, "owner": "Ast"},
-      {"id": 603, "text": "Сделать версию для печати", "done": false, "owner": "Ast"}
+      {
+        "id": 327,
+        "text": "Сгруппировать по категориям молекулы (сильное поднять в топ, что-то опустить)",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 601,
+        "text": "Сделать первый вариант и отправить для обратной связи",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 602,
+        "text": "Доработать весь продукт лист с учётом замечаний",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 603,
+        "text": "Сделать версию для печати",
+        "done": false,
+        "owner": "Ast"
+      }
     ]
   },
   {
@@ -1279,12 +1387,42 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "",
     "subs": [
-      {"id": 201, "text": "Создать шаблон NDA", "done": true, "owner": "Ast"},
-      {"id": 202, "text": "Отредактировать", "done": true, "owner": "Ast"},
-      {"id": 203, "text": "Получить все личные данные", "done": true, "owner": "Ast"},
-      {"id": 204, "text": "Подписать, отсканировать и отправить", "done": true, "owner": "Ast"},
-      {"id": 401, "text": "Подписать руководителю", "done": true, "owner": "Mgr"},
-      {"id": 402, "text": "Загрузить на диск", "done": true, "owner": "Ast"}
+      {
+        "id": 201,
+        "text": "Создать шаблон NDA",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 202,
+        "text": "Отредактировать",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 203,
+        "text": "Получить все личные данные",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 204,
+        "text": "Подписать, отсканировать и отправить",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 401,
+        "text": "Подписать руководителю",
+        "done": true,
+        "owner": "Mgr"
+      },
+      {
+        "id": 402,
+        "text": "Загрузить на диск",
+        "done": true,
+        "owner": "Ast"
+      }
     ]
   },
   {
@@ -1297,8 +1435,18 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "",
     "subs": [
-      {"id": 502, "text": "Сделать предварительный анализ с ИИ", "done": true, "owner": "Ast"},
-      {"id": 503, "text": "Переработать наш анализ, посмотреть на выставку ipheb 2026, взять оттуда китайские компании, что они предлагают", "done": true, "owner": "Ast"}
+      {
+        "id": 502,
+        "text": "Сделать предварительный анализ с ИИ",
+        "done": true,
+        "owner": "Ast"
+      },
+      {
+        "id": 503,
+        "text": "Переработать наш анализ, посмотреть на выставку ipheb 2026, взять оттуда китайские компании, что они предлагают",
+        "done": true,
+        "owner": "Ast"
+      }
     ]
   },
   {
@@ -1311,10 +1459,30 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "В письмах - дайджесты про новым продуктам (берем из нового списка СЗЛС) и ближе к дате выставки - приглашение к нам на стенд",
     "subs": [
-      {"id": 605, "text": "Сделать список продуктов, о которых будем писать", "done": false, "owner": "Ast"},
-      {"id": 606, "text": "Подготовить контент план (пока без реальных писем), с идеями на каждую неделю до выставки)", "done": false, "owner": "Ast"},
-      {"id": 607, "text": "Подготовить дайджесты по продуктам", "done": false, "owner": "Ast"},
-      {"id": 608, "text": "Утвердить план и сделать письма по неделям, оформить в удобной табличке", "done": false, "owner": "Ast"}
+      {
+        "id": 605,
+        "text": "Сделать список продуктов, о которых будем писать",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 606,
+        "text": "Подготовить контент план (пока без реальных писем), с идеями на каждую неделю до выставки)",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 607,
+        "text": "Подготовить дайджесты по продуктам",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 608,
+        "text": "Утвердить план и сделать письма по неделям, оформить в удобной табличке",
+        "done": false,
+        "owner": "Ast"
+      }
     ]
   },
   {
@@ -1327,9 +1495,24 @@ let TASKS = [
     "owner": "Assistant",
     "comment": "Берем наш продуктовый лист и рос реестр с компаниями и зарегистрированными препаратами, смотрим у кого что зарегистрировано и когда заканчивается срок действия, потом прогоняем через иишку",
     "subs": [
-      {"id": 610, "text": "Поискать инструменты, что быстро достать эту инфу", "done": false, "owner": "Ast"},
-      {"id": 611, "text": "Сформировать список: продукт-почему внесли-компания", "done": false, "owner": "Ast"},
-      {"id": 612, "text": "Через ии прогнать список и сформировать стратегию, гипотезы для выхода к ним с предложением по техтрансферу", "done": false, "owner": "Ast"}
+      {
+        "id": 610,
+        "text": "Поискать инструменты, что быстро достать эту инфу",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 611,
+        "text": "Сформировать список: продукт-почему внесли-компания",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 612,
+        "text": "Через ии прогнать список и сформировать стратегию, гипотезы для выхода к ним с предложением по техтрансферу",
+        "done": false,
+        "owner": "Ast"
+      }
     ]
   }
 ];
@@ -1706,5 +1889,6 @@ async function saveToGitHub(silent=false){
 
 render();
 </script>
+
 
 </body></html>
