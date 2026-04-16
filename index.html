@@ -174,7 +174,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="board" id="board"><div class="col" data-status="inprogress">
       <div class="col-header">
         <span class="col-title">🔄 In progress</span>
-        <span class="col-badge">1</span>
+        <span class="col-badge">2</span>
       </div>
       
       <div class="add-task-form">
@@ -189,7 +189,119 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
           <input class="edit-input" id="nd_inprogress" placeholder="дедлайн" style="margin:0;width:80px">
         </div>
         <button class="btn primary" onclick="addTask('inprogress')">+ Задача</button>
-      </div><div class="card" data-priority="high" id="card_2">
+      </div><div class="card" data-priority="high" id="card_1">
+    <div class="card-name">Создать презентацию (short + long version)</div>
+    <div class="card-meta">
+      <span class="pill pill-high">High</span>
+      <span class="pill pill-dl hot">📅 9 апр</span>
+    </div>
+    <hr class="section-divider">
+    <div class="progress-label">9/9 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
+      <div class="sub" id="sub_11">
+        <div class="checkbox checked" onclick="toggleSub(11)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(11)">Выбрать дизайнера</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_12">
+        <div class="checkbox checked" onclick="toggleSub(12)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(12)">Согласовать условия и отдать в работу</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_301">
+        <div class="checkbox checked" onclick="toggleSub(301)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(301)">Доработать текст слайдов</span>
+          <div class="sub-meta"><span class="sub-owner-label">Both</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_316">
+        <div class="checkbox checked" onclick="toggleSub(316)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(316)">Закончить работу с дизайнером, оплатить, получить исходники</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_317">
+        <div class="checkbox checked" onclick="toggleSub(317)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(317)">Собрать короткую презентацию</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_318">
+        <div class="checkbox checked" onclick="toggleSub(318)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(318)">Внести правки по короткой презентации</span>
+          <div class="sub-meta"><span class="sub-owner-label">Both</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_319">
+        <div class="checkbox checked" onclick="toggleSub(319)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(319)">Собрать полную презентацию</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_320">
+        <div class="checkbox checked" onclick="toggleSub(320)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(320)">Внести правки по полной презентации</span>
+          <div class="sub-meta"><span class="sub-owner-label">Both</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_321">
+        <div class="checkbox checked" onclick="toggleSub(321)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(321)">Проверить настройки печати</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_1" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(1)">
+      <select class="edit-select" id="nso_1" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(1)">Ок</button>
+    </div>
+    <hr class="section-divider"><div class="comment-block"><span class="comment-empty">Нет комментария</span></div>
+    
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(1)">✏️ Изменить задачу</button>
+    </div>
+  <div class="inline-edit" id="ie_1">
+    <div class="ie-row"><span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_1" value="Создать презентацию (short + long version)" onkeydown="if(event.key==='Enter')applyEdit(1)"></div>
+    <div class="ie-row"><span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_1"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
+    <div class="ie-row"><span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_1">
+        <option value="high" selected="">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_1">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_1" value="9 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(1)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_1" checked="" style="cursor:pointer"> горит
+      </label></div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(1)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(1)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(1)">Отмена</button>
+    </div>
+  </div>
+  </div><div class="card" data-priority="high" id="card_2">
     <div class="card-name">Сделать аутрич для компаний Амедарт и Озон Фарма</div>
     <div class="card-meta">
       <span class="pill pill-high">High</span>
@@ -665,7 +777,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div><div class="col" data-status="done">
       <div class="col-header">
         <span class="col-title">✔ Done</span>
-        <span class="col-badge">3</span>
+        <span class="col-badge">2</span>
       </div>
       
       <div class="add-task-form">
@@ -680,119 +792,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
           <input class="edit-input" id="nd_done" placeholder="дедлайн" style="margin:0;width:80px">
         </div>
         <button class="btn primary" onclick="addTask('done')">+ Задача</button>
-      </div><div class="card" data-priority="high" id="card_1">
-    <div class="card-name">Создать презентацию (short + long version)</div>
-    <div class="card-meta">
-      <span class="pill pill-high">High</span>
-      <span class="pill pill-dl hot">📅 9 апр</span>
-    </div>
-    <hr class="section-divider">
-    <div class="progress-label">9/9 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
-      <div class="sub" id="sub_11">
-        <div class="checkbox checked" onclick="toggleSub(11)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(11)">Выбрать дизайнера</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_12">
-        <div class="checkbox checked" onclick="toggleSub(12)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(12)">Согласовать условия и отдать в работу</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_301">
-        <div class="checkbox checked" onclick="toggleSub(301)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(301)">Доработать текст слайдов</span>
-          <div class="sub-meta"><span class="sub-owner-label">Both</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_316">
-        <div class="checkbox checked" onclick="toggleSub(316)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(316)">Закончить работу с дизайнером, оплатить, получить исходники</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_317">
-        <div class="checkbox checked" onclick="toggleSub(317)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(317)">Собрать короткую презентацию</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_318">
-        <div class="checkbox checked" onclick="toggleSub(318)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(318)">Внести правки по короткой презентации</span>
-          <div class="sub-meta"><span class="sub-owner-label">Both</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_319">
-        <div class="checkbox checked" onclick="toggleSub(319)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(319)">Собрать полную презентацию</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_320">
-        <div class="checkbox checked" onclick="toggleSub(320)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(320)">Внести правки по полной презентации</span>
-          <div class="sub-meta"><span class="sub-owner-label">Both</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_321">
-        <div class="checkbox checked" onclick="toggleSub(321)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(321)">Проверить настройки печати</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-    <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_1" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(1)">
-      <select class="edit-select" id="nso_1" style="font-size:11px;padding:3px 5px">
-        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
-      </select>
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(1)">Ок</button>
-    </div>
-    <hr class="section-divider"><div class="comment-block"><span class="comment-empty">Нет комментария</span></div>
-    
-    <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(1)">✏️ Изменить задачу</button>
-    </div>
-  <div class="inline-edit" id="ie_1">
-    <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_1" value="Создать презентацию (short + long version)" onkeydown="if(event.key==='Enter')applyEdit(1)"></div>
-    <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_1"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done" selected="">✔ Done</option></select></div>
-    <div class="ie-row"><span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_1">
-        <option value="high" selected="">🔴 High</option>
-        <option value="medium">🟡 Medium</option>
-        <option value="low">⚪ Low</option>
-      </select></div>
-    <div class="ie-row"><span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_1">
-        <option value="Manager">Manager</option>
-        <option value="Assistant" selected="">Assistant</option>
-        <option value="Both">Both</option>
-      </select></div>
-    <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_1" value="9 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(1)">
-      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_1" checked="" style="cursor:pointer"> горит
-      </label></div>
-    <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(1)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(1)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(1)">Отмена</button>
-    </div>
-  </div>
-  </div><div class="card" data-priority="high" id="card_4">
+      </div><div class="card" data-priority="high" id="card_4">
     <div class="card-name">Подписать шаблон NDA</div>
     <div class="card-meta">
       <span class="pill pill-high">High</span>
@@ -957,7 +957,7 @@ let TASKS = [
     "priority": "high",
     "deadline": "9 апр",
     "deadlineHot": true,
-    "status": "done",
+    "status": "inprogress",
     "owner": "Assistant",
     "comment": "",
     "subs": [
