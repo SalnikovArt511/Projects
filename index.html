@@ -174,7 +174,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="board" id="board"><div class="col" data-status="inprogress">
       <div class="col-header">
         <span class="col-title">🔄 In progress</span>
-        <span class="col-badge">1</span>
+        <span class="col-badge">0</span>
       </div>
       
       <div class="add-task-form">
@@ -189,91 +189,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
           <input class="edit-input" id="nd_inprogress" placeholder="дедлайн" style="margin:0;width:80px">
         </div>
         <button class="btn primary" onclick="addTask('inprogress')">+ Задача</button>
-      </div><div class="card" data-priority="high" id="card_2">
-    <div class="card-name">Сделать аутрич для компаний Амедарт и Озон Фарма</div>
-    <div class="card-meta">
-      <span class="pill pill-high">High</span>
-      <span class="pill pill-dl hot">📅 13 апр</span>
-    </div>
-    <hr class="section-divider">
-    <div class="progress-label">5/5 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
-      <div class="sub" id="sub_21">
-        <div class="checkbox checked" onclick="toggleSub(21)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(21)">Анализ Озон Фарма + промпт для анализа</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_22">
-        <div class="checkbox checked" onclick="toggleSub(22)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(22)">Структура аутрича Озон Фарма + промпт</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_23">
-        <div class="checkbox checked" onclick="toggleSub(23)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(23)">Ветки по компаниям в Claude + Диск</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_304">
-        <div class="checkbox checked" onclick="toggleSub(304)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(304)">Анализ амедарт + структура аутрича</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_322">
-        <div class="checkbox checked" onclick="toggleSub(322)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(322)">На этой неделе отправка писем: текст+преза+продукт лист</span>
-          <div class="sub-meta"><span class="sub-owner-label">Mgr</span></div>
-        </div>
-      </div>
-    <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_2" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(2)">
-      <select class="edit-select" id="nso_2" style="font-size:11px;padding:3px 5px">
-        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
-      </select>
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(2)">Ок</button>
-    </div>
-    <hr class="section-divider"><div class="comment-block"><span class="comment-empty">Нет комментария</span></div>
-    
-    <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(2)">✏️ Изменить задачу</button>
-    </div>
-  <div class="inline-edit" id="ie_2">
-    <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_2" value="Сделать аутрич для компаний Амедарт и Озон Фарма" onkeydown="if(event.key==='Enter')applyEdit(2)"></div>
-    <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_2"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
-    <div class="ie-row"><span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_2">
-        <option value="high" selected="">🔴 High</option>
-        <option value="medium">🟡 Medium</option>
-        <option value="low">⚪ Low</option>
-      </select></div>
-    <div class="ie-row"><span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_2">
-        <option value="Manager">Manager</option>
-        <option value="Assistant" selected="">Assistant</option>
-        <option value="Both">Both</option>
-      </select></div>
-    <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_2" value="13 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(2)">
-      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_2" checked="" style="cursor:pointer"> горит
-      </label></div>
-    <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(2)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(2)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(2)">Отмена</button>
-    </div>
-  </div>
-  </div>
+      </div><div class="col-empty">Нет задач</div>
     </div><div class="col" data-status="inbox">
       <div class="col-header">
         <span class="col-title">📥 Inbox</span>
@@ -387,12 +303,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <span class="pill pill-dl">📅 13 апр</span>
     </div>
     <hr class="section-divider">
-    <div class="progress-label">0/3 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+    <div class="progress-label">1/3 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:33%"></div></div>
       <div class="sub" id="sub_312">
-        <div class="checkbox" onclick="toggleSub(312)"></div>
+        <div class="checkbox checked" onclick="toggleSub(312)"></div>
         <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(312)">Описать варианты, как это может работать</span>
+          <span class="sub-text done" onclick="toggleSub(312)">Описать варианты, как это может работать</span>
           <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
         </div>
       </div>
@@ -658,7 +574,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div><div class="col" data-status="done">
       <div class="col-header">
         <span class="col-title">✔ Done</span>
-        <span class="col-badge">3</span>
+        <span class="col-badge">4</span>
       </div>
       
       <div class="add-task-form">
@@ -783,6 +699,90 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(1)">Сохранить</button>
       <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(1)">Удалить</button>
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(1)">Отмена</button>
+    </div>
+  </div>
+  </div><div class="card" data-priority="high" id="card_2">
+    <div class="card-name">Сделать аутрич для компаний Амедарт и Озон Фарма</div>
+    <div class="card-meta">
+      <span class="pill pill-high">High</span>
+      <span class="pill pill-dl hot">📅 13 апр</span>
+    </div>
+    <hr class="section-divider">
+    <div class="progress-label">5/5 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
+      <div class="sub" id="sub_21">
+        <div class="checkbox checked" onclick="toggleSub(21)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(21)">Анализ Озон Фарма + промпт для анализа</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_22">
+        <div class="checkbox checked" onclick="toggleSub(22)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(22)">Структура аутрича Озон Фарма + промпт</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_23">
+        <div class="checkbox checked" onclick="toggleSub(23)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(23)">Ветки по компаниям в Claude + Диск</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_304">
+        <div class="checkbox checked" onclick="toggleSub(304)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(304)">Анализ амедарт + структура аутрича</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_322">
+        <div class="checkbox checked" onclick="toggleSub(322)"></div>
+        <div class="sub-body">
+          <span class="sub-text done" onclick="toggleSub(322)">На этой неделе отправка писем: текст+преза+продукт лист</span>
+          <div class="sub-meta"><span class="sub-owner-label">Mgr</span></div>
+        </div>
+      </div>
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_2" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(2)">
+      <select class="edit-select" id="nso_2" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(2)">Ок</button>
+    </div>
+    <hr class="section-divider"><div class="comment-block"><span class="comment-empty">Нет комментария</span></div>
+    
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(2)">✏️ Изменить задачу</button>
+    </div>
+  <div class="inline-edit" id="ie_2">
+    <div class="ie-row"><span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_2" value="Сделать аутрич для компаний Амедарт и Озон Фарма" onkeydown="if(event.key==='Enter')applyEdit(2)"></div>
+    <div class="ie-row"><span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_2"><option value="inprogress">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done" selected="">✔ Done</option></select></div>
+    <div class="ie-row"><span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_2">
+        <option value="high" selected="">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_2">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_2" value="13 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(2)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_2" checked="" style="cursor:pointer"> горит
+      </label></div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(2)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(2)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(2)">Отмена</button>
     </div>
   </div>
   </div><div class="card" data-priority="high" id="card_4">
@@ -1016,7 +1016,7 @@ let TASKS = [
     "priority": "high",
     "deadline": "13 апр",
     "deadlineHot": true,
-    "status": "inprogress",
+    "status": "done",
     "owner": "Assistant",
     "comment": "",
     "subs": [
@@ -1107,7 +1107,7 @@ let TASKS = [
       {
         "id": 312,
         "text": "Описать варианты, как это может работать",
-        "done": false,
+        "done": true,
         "owner": "Ast"
       },
       {
