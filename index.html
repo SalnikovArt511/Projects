@@ -174,7 +174,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="board" id="board"><div class="col" data-status="inprogress">
       <div class="col-header">
         <span class="col-title">🔄 In progress</span>
-        <span class="col-badge">1</span>
+        <span class="col-badge">2</span>
       </div>
       
       <div class="add-task-form">
@@ -268,6 +268,87 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(326)">Сохранить</button>
       <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(326)">Удалить</button>
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(326)">Отмена</button>
+    </div>
+  </div>
+  </div><div class="card" data-priority="medium" id="card_604">
+    <div class="card-name">Сделать контент план писем (выставка в Шанхае)</div>
+    <div class="card-meta">
+      <span class="pill pill-medium">Medium</span>
+      <span class="pill pill-dl">📅 26 апр</span>
+    </div>
+    <hr class="section-divider">
+    <div class="progress-label">0/4 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <div class="sub" id="sub_605">
+        <div class="checkbox" onclick="toggleSub(605)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(605)">Сделать список продуктов, о которых будем писать</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_606">
+        <div class="checkbox" onclick="toggleSub(606)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(606)">Подготовить контент план (пока без реальных писем), с идеями на каждую неделю до выставки)</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_607">
+        <div class="checkbox" onclick="toggleSub(607)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(607)">Подготовить дайджесты по продуктам</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_608">
+        <div class="checkbox" onclick="toggleSub(608)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(608)">Утвердить план и сделать письма по неделям, оформить в удобной табличке</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_604" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(604)">
+      <select class="edit-select" id="nso_604" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(604)">Ок</button>
+    </div>
+    <hr class="section-divider">
+    <div class="comment-block">
+      <div class="comment-text">В письмах - дайджесты про новым продуктам (берем из нового списка СЗЛС) и ближе к дате выставки - приглашение к нам на стенд</div>
+      
+    </div>
+    
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(604)">✏️ Изменить задачу</button>
+    </div>
+  <div class="inline-edit" id="ie_604">
+    <div class="ie-row"><span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_604" value="Сделать контент план писем (выставка в Шанхае)" onkeydown="if(event.key==='Enter')applyEdit(604)"></div>
+    <div class="ie-row"><span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_604"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
+    <div class="ie-row"><span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_604">
+        <option value="high">🔴 High</option>
+        <option value="medium" selected="">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_604">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_604" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(604)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_604" style="cursor:pointer"> горит
+      </label></div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(604)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(604)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(604)">Отмена</button>
     </div>
   </div>
   </div>
@@ -1290,6 +1371,42 @@ let TASKS = [
         "id": 503,
         "text": "Переработать наш анализ, посмотреть на выставку ipheb 2026, взять оттуда китайские компании, что они предлагают",
         "done": true,
+        "owner": "Ast"
+      }
+    ]
+  },
+  {
+    "id": 604,
+    "name": "Сделать контент план писем (выставка в Шанхае)",
+    "priority": "medium",
+    "deadline": "26 апр",
+    "deadlineHot": false,
+    "status": "inprogress",
+    "owner": "Assistant",
+    "comment": "В письмах - дайджесты про новым продуктам (берем из нового списка СЗЛС) и ближе к дате выставки - приглашение к нам на стенд",
+    "subs": [
+      {
+        "id": 605,
+        "text": "Сделать список продуктов, о которых будем писать",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 606,
+        "text": "Подготовить контент план (пока без реальных писем), с идеями на каждую неделю до выставки)",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 607,
+        "text": "Подготовить дайджесты по продуктам",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 608,
+        "text": "Утвердить план и сделать письма по неделям, оформить в удобной табличке",
+        "done": false,
         "owner": "Ast"
       }
     ]
