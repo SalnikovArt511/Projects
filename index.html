@@ -355,7 +355,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div><div class="col" data-status="inbox">
       <div class="col-header">
         <span class="col-title">📥 Inbox</span>
-        <span class="col-badge">2</span>
+        <span class="col-badge">3</span>
       </div>
       
       <div class="add-task-form">
@@ -530,6 +530,80 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(609)">Сохранить</button>
       <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(609)">Удалить</button>
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(609)">Отмена</button>
+    </div>
+  </div>
+  </div><div class="card" data-priority="high" id="card_701">
+    <div class="card-name">Сайт-проекты</div>
+    <div class="card-meta">
+      <span class="pill pill-high">High</span>
+      <span class="pill pill-dl">📅 26 апр</span>
+    </div>
+    <hr class="section-divider">
+    <div class="progress-label">0/3 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <div class="sub" id="sub_702">
+        <div class="checkbox" onclick="toggleSub(702)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(702)">Сформировать список минимальный</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_703">
+        <div class="checkbox" onclick="toggleSub(703)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(703)">Развить идеи из списка с ИИ</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_704">
+        <div class="checkbox" onclick="toggleSub(704)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(704)">Выбрать одну для реализации</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_701" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(701)">
+      <select class="edit-select" id="nso_701" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(701)">Ок</button>
+    </div>
+    <hr class="section-divider">
+    <div class="comment-block">
+      <div class="comment-text">Делаем список гипотез и предложений на рынок, нам нужно быстро тестировать идеи и если выстрелит будем углубляться туда</div>
+      
+    </div>
+    
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(701)">✏️ Изменить задачу</button>
+    </div>
+  <div class="inline-edit" id="ie_701">
+    <div class="ie-row"><span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_701" value="Сайт-проекты" onkeydown="if(event.key==='Enter')applyEdit(701)"></div>
+    <div class="ie-row"><span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_701"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
+    <div class="ie-row"><span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_701">
+        <option value="high" selected="">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_701">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_701" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(701)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_701" style="cursor:pointer"> горит
+      </label></div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(701)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(701)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(701)">Отмена</button>
     </div>
   </div>
   </div>
@@ -1510,6 +1584,36 @@ let TASKS = [
       {
         "id": 612,
         "text": "Через ии прогнать список и сформировать стратегию, гипотезы для выхода к ним с предложением по техтрансферу",
+        "done": false,
+        "owner": "Ast"
+      }
+    ]
+  },
+  {
+    "id": 701,
+    "name": "Сайт-проекты",
+    "priority": "high",
+    "deadline": "26 апр",
+    "deadlineHot": false,
+    "status": "inbox",
+    "owner": "Assistant",
+    "comment": "Делаем список гипотез и предложений на рынок, нам нужно быстро тестировать идеи и если выстрелит будем углубляться туда",
+    "subs": [
+      {
+        "id": 702,
+        "text": "Сформировать список минимальный",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 703,
+        "text": "Развить идеи из списка с ИИ",
+        "done": false,
+        "owner": "Ast"
+      },
+      {
+        "id": 704,
+        "text": "Выбрать одну для реализации",
         "done": false,
         "owner": "Ast"
       }
