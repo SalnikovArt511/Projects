@@ -174,7 +174,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="board" id="board"><div class="col" data-status="inprogress">
       <div class="col-header">
         <span class="col-title">🔄 In progress</span>
-        <span class="col-badge">2</span>
+        <span class="col-badge">3</span>
       </div>
       
       <div class="add-task-form">
@@ -189,92 +189,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
           <input class="edit-input" id="nd_inprogress" placeholder="дедлайн" style="margin:0;width:80px">
         </div>
         <button class="btn primary" onclick="addTask('inprogress')">+ Задача</button>
-      </div><div class="card" data-priority="medium" id="card_326">
-    <div class="card-name">Оформить новый продукт лист</div>
-    <div class="card-meta">
-      <span class="pill pill-medium">Medium</span>
-      
-    </div>
-    <hr class="section-divider">
-    <div class="progress-label">2/4 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:50%"></div></div>
-      <div class="sub" id="sub_327">
-        <div class="checkbox checked" onclick="toggleSub(327)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(327)">Сгруппировать по категориям молекулы (сильное поднять в топ, что-то опустить)</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_601">
-        <div class="checkbox checked" onclick="toggleSub(601)"></div>
-        <div class="sub-body">
-          <span class="sub-text done" onclick="toggleSub(601)">Сделать первый вариант и отправить для обратной связи</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_602">
-        <div class="checkbox" onclick="toggleSub(602)"></div>
-        <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(602)">Доработать весь продукт лист с учётом замечаний</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_603">
-        <div class="checkbox" onclick="toggleSub(603)"></div>
-        <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(603)">Сделать версию для печати</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-    <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_326" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(326)">
-      <select class="edit-select" id="nso_326" style="font-size:11px;padding:3px 5px">
-        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
-      </select>
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(326)">Ок</button>
-    </div>
-    <hr class="section-divider">
-    <div class="comment-block">
-      <div class="comment-text">Работаем ИТЕРАЦИЯМИ: черновик (что-то хорошее выдал GPT) - выношу на обсуждение - после доработки полная версия</div>
-      
-    </div>
-    
-    <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(326)">✏️ Изменить задачу</button>
-    </div>
-  <div class="inline-edit" id="ie_326">
-    <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_326" value="Оформить новый продукт лист" onkeydown="if(event.key==='Enter')applyEdit(326)"></div>
-    <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_326"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
-    <div class="ie-row"><span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_326">
-        <option value="high">🔴 High</option>
-        <option value="medium" selected="">🟡 Medium</option>
-        <option value="low">⚪ Low</option>
-      </select></div>
-    <div class="ie-row"><span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_326">
-        <option value="Manager">Manager</option>
-        <option value="Assistant" selected="">Assistant</option>
-        <option value="Both">Both</option>
-      </select></div>
-    <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_326" value="" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(326)">
-      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_326" style="cursor:pointer"> горит
-      </label></div>
-    <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(326)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(326)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(326)">Отмена</button>
-    </div>
-  </div>
-  </div><div class="card" data-priority="medium" id="card_604">
+      </div><div class="card" data-priority="high" id="card_604">
     <div class="card-name">Сделать контент план писем (выставка в Шанхае)</div>
     <div class="card-meta">
-      <span class="pill pill-medium">Medium</span>
-      <span class="pill pill-dl">📅 26 апр</span>
+      <span class="pill pill-high">High</span>
+      <span class="pill pill-dl hot">📅 20 апр</span>
     </div>
     <hr class="section-divider">
     <div class="progress-label">0/4 выполнено</div>
@@ -330,8 +249,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <select class="ie-select" id="ie_st_604"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
       <select class="ie-select" id="ie_pr_604">
-        <option value="high">🔴 High</option>
-        <option value="medium" selected="">🟡 Medium</option>
+        <option value="high" selected="">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
         <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
@@ -341,9 +260,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_604" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(604)">
+      <input class="ie-input" id="ie_dl_604" value="20 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(604)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_604" style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_604" checked="" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
       <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(604)">Сохранить</button>
@@ -351,11 +270,159 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(604)">Отмена</button>
     </div>
   </div>
+  </div><div class="card" data-priority="high" id="card_609">
+    <div class="card-name">Дерево гипотез (когда нужен техтрансфер?)</div>
+    <div class="card-meta">
+      <span class="pill pill-high">High</span>
+      <span class="pill pill-dl">📅 26 апр</span>
+    </div>
+    <hr class="section-divider">
+    <div class="progress-label">0/3 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <div class="sub" id="sub_610">
+        <div class="checkbox" onclick="toggleSub(610)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(610)">Поискать инструменты, что быстро достать эту инфу</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_611">
+        <div class="checkbox" onclick="toggleSub(611)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(611)">Сформировать список: продукт-почему внесли-компания</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_612">
+        <div class="checkbox" onclick="toggleSub(612)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(612)">Через ии прогнать список и сформировать стратегию, гипотезы для выхода к ним с предложением по техтрансферу</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_609" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(609)">
+      <select class="edit-select" id="nso_609" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(609)">Ок</button>
+    </div>
+    <hr class="section-divider">
+    <div class="comment-block">
+      <div class="comment-text">Берем наш продуктовый лист и рос реестр с компаниями и зарегистрированными препаратами, смотрим у кого что зарегистрировано и когда заканчивается срок действия, потом прогоняем через иишку</div>
+      
+    </div>
+    
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(609)">✏️ Изменить задачу</button>
+    </div>
+  <div class="inline-edit" id="ie_609">
+    <div class="ie-row"><span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_609" value="Дерево гипотез (когда нужен техтрансфер?)" onkeydown="if(event.key==='Enter')applyEdit(609)"></div>
+    <div class="ie-row"><span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_609"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
+    <div class="ie-row"><span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_609">
+        <option value="high" selected="">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_609">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_609" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(609)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_609" style="cursor:pointer"> горит
+      </label></div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(609)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(609)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(609)">Отмена</button>
+    </div>
+  </div>
+  </div><div class="card" data-priority="high" id="card_701">
+    <div class="card-name">Сайт-проекты</div>
+    <div class="card-meta">
+      <span class="pill pill-high">High</span>
+      <span class="pill pill-dl">📅 26 апр</span>
+    </div>
+    <hr class="section-divider">
+    <div class="progress-label">0/3 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <div class="sub" id="sub_702">
+        <div class="checkbox" onclick="toggleSub(702)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(702)">Сформировать список минимальный</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_703">
+        <div class="checkbox" onclick="toggleSub(703)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(703)">Развить идеи из списка с ИИ</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_704">
+        <div class="checkbox" onclick="toggleSub(704)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(704)">Выбрать одну для реализации</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+    <div class="add-sub-row">
+      <input class="add-sub-input" id="ns_701" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(701)">
+      <select class="edit-select" id="nso_701" style="font-size:11px;padding:3px 5px">
+        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
+      </select>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(701)">Ок</button>
+    </div>
+    <hr class="section-divider">
+    <div class="comment-block">
+      <div class="comment-text">Делаем список гипотез и предложений на рынок, нам нужно быстро тестировать идеи и если выстрелит будем углубляться туда</div>
+      
+    </div>
+    
+    <div class="card-controls">
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(701)">✏️ Изменить задачу</button>
+    </div>
+  <div class="inline-edit" id="ie_701">
+    <div class="ie-row"><span class="ie-label">Название</span>
+      <input class="ie-input" id="ie_name_701" value="Сайт-проекты" onkeydown="if(event.key==='Enter')applyEdit(701)"></div>
+    <div class="ie-row"><span class="ie-label">Статус</span>
+      <select class="ie-select" id="ie_st_701"><option value="inprogress" selected="">🔄 In progress</option><option value="inbox">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
+    <div class="ie-row"><span class="ie-label">Приоритет</span>
+      <select class="ie-select" id="ie_pr_701">
+        <option value="high" selected="">🔴 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low">⚪ Low</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Owner</span>
+      <select class="ie-select" id="ie_ow_701">
+        <option value="Manager">Manager</option>
+        <option value="Assistant" selected="">Assistant</option>
+        <option value="Both">Both</option>
+      </select></div>
+    <div class="ie-row"><span class="ie-label">Дедлайн</span>
+      <input class="ie-input" id="ie_dl_701" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(701)">
+      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
+        <input type="checkbox" id="ie_hot_701" style="cursor:pointer"> горит
+      </label></div>
+    <div class="ie-actions">
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(701)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(701)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(701)">Отмена</button>
+    </div>
+  </div>
   </div>
     </div><div class="col" data-status="inbox">
       <div class="col-header">
         <span class="col-title">📥 Inbox</span>
-        <span class="col-badge">3</span>
+        <span class="col-badge">2</span>
       </div>
       
       <div class="add-task-form">
@@ -458,152 +525,85 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(3)">Отмена</button>
     </div>
   </div>
-  </div><div class="card" data-priority="medium" id="card_609">
-    <div class="card-name">Дерево гипотез (когда нужен техтрансфер?)</div>
+  </div><div class="card" data-priority="medium" id="card_326">
+    <div class="card-name">Оформить новый продукт лист</div>
     <div class="card-meta">
       <span class="pill pill-medium">Medium</span>
-      <span class="pill pill-dl">📅 26 апр</span>
+      
     </div>
     <hr class="section-divider">
-    <div class="progress-label">0/3 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
-      <div class="sub" id="sub_610">
-        <div class="checkbox" onclick="toggleSub(610)"></div>
+    <div class="progress-label">2/4 выполнено</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:50%"></div></div>
+      <div class="sub" id="sub_327">
+        <div class="checkbox checked" onclick="toggleSub(327)"></div>
         <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(610)">Поискать инструменты, что быстро достать эту инфу</span>
+          <span class="sub-text done" onclick="toggleSub(327)">Сгруппировать по категориям молекулы (сильное поднять в топ, что-то опустить)</span>
           <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
         </div>
       </div>
-      <div class="sub" id="sub_611">
-        <div class="checkbox" onclick="toggleSub(611)"></div>
+      <div class="sub" id="sub_601">
+        <div class="checkbox checked" onclick="toggleSub(601)"></div>
         <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(611)">Сформировать список: продукт-почему внесли-компания</span>
+          <span class="sub-text done" onclick="toggleSub(601)">Сделать первый вариант и отправить для обратной связи</span>
           <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
         </div>
       </div>
-      <div class="sub" id="sub_612">
-        <div class="checkbox" onclick="toggleSub(612)"></div>
+      <div class="sub" id="sub_602">
+        <div class="checkbox" onclick="toggleSub(602)"></div>
         <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(612)">Через ии прогнать список и сформировать стратегию, гипотезы для выхода к ним с предложением по техтрансферу</span>
+          <span class="sub-text" onclick="toggleSub(602)">Доработать весь продукт лист с учётом замечаний</span>
+          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
+        </div>
+      </div>
+      <div class="sub" id="sub_603">
+        <div class="checkbox" onclick="toggleSub(603)"></div>
+        <div class="sub-body">
+          <span class="sub-text" onclick="toggleSub(603)">Сделать версию для печати</span>
           <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
         </div>
       </div>
     <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_609" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(609)">
-      <select class="edit-select" id="nso_609" style="font-size:11px;padding:3px 5px">
+      <input class="add-sub-input" id="ns_326" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(326)">
+      <select class="edit-select" id="nso_326" style="font-size:11px;padding:3px 5px">
         <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
       </select>
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(609)">Ок</button>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(326)">Ок</button>
     </div>
     <hr class="section-divider">
     <div class="comment-block">
-      <div class="comment-text">Берем наш продуктовый лист и рос реестр с компаниями и зарегистрированными препаратами, смотрим у кого что зарегистрировано и когда заканчивается срок действия, потом прогоняем через иишку</div>
+      <div class="comment-text">Работаем ИТЕРАЦИЯМИ: черновик (что-то хорошее выдал GPT) - выношу на обсуждение - после доработки полная версия</div>
       
     </div>
     
     <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(609)">✏️ Изменить задачу</button>
+      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(326)">✏️ Изменить задачу</button>
     </div>
-  <div class="inline-edit" id="ie_609">
+  <div class="inline-edit" id="ie_326">
     <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_609" value="Дерево гипотез (когда нужен техтрансфер?)" onkeydown="if(event.key==='Enter')applyEdit(609)"></div>
+      <input class="ie-input" id="ie_name_326" value="Оформить новый продукт лист" onkeydown="if(event.key==='Enter')applyEdit(326)"></div>
     <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_609"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
+      <select class="ie-select" id="ie_st_326"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
     <div class="ie-row"><span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_609">
+      <select class="ie-select" id="ie_pr_326">
         <option value="high">🔴 High</option>
         <option value="medium" selected="">🟡 Medium</option>
         <option value="low">⚪ Low</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_609">
+      <select class="ie-select" id="ie_ow_326">
         <option value="Manager">Manager</option>
         <option value="Assistant" selected="">Assistant</option>
         <option value="Both">Both</option>
       </select></div>
     <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_609" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(609)">
+      <input class="ie-input" id="ie_dl_326" value="" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(326)">
       <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_609" style="cursor:pointer"> горит
+        <input type="checkbox" id="ie_hot_326" style="cursor:pointer"> горит
       </label></div>
     <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(609)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(609)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(609)">Отмена</button>
-    </div>
-  </div>
-  </div><div class="card" data-priority="high" id="card_701">
-    <div class="card-name">Сайт-проекты</div>
-    <div class="card-meta">
-      <span class="pill pill-high">High</span>
-      <span class="pill pill-dl">📅 26 апр</span>
-    </div>
-    <hr class="section-divider">
-    <div class="progress-label">0/3 выполнено</div>
-    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:0%"></div></div>
-      <div class="sub" id="sub_702">
-        <div class="checkbox" onclick="toggleSub(702)"></div>
-        <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(702)">Сформировать список минимальный</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_703">
-        <div class="checkbox" onclick="toggleSub(703)"></div>
-        <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(703)">Развить идеи из списка с ИИ</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-      <div class="sub" id="sub_704">
-        <div class="checkbox" onclick="toggleSub(704)"></div>
-        <div class="sub-body">
-          <span class="sub-text" onclick="toggleSub(704)">Выбрать одну для реализации</span>
-          <div class="sub-meta"><span class="sub-owner-label">Ast</span></div>
-        </div>
-      </div>
-    <div class="add-sub-row">
-      <input class="add-sub-input" id="ns_701" placeholder="+ Подзадача" onkeydown="if(event.key==='Enter')addSub(701)">
-      <select class="edit-select" id="nso_701" style="font-size:11px;padding:3px 5px">
-        <option value="Ast">Ast</option><option value="Both">Both</option><option value="Mgr">Mgr</option>
-      </select>
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="addSub(701)">Ок</button>
-    </div>
-    <hr class="section-divider">
-    <div class="comment-block">
-      <div class="comment-text">Делаем список гипотез и предложений на рынок, нам нужно быстро тестировать идеи и если выстрелит будем углубляться туда</div>
-      
-    </div>
-    
-    <div class="card-controls">
-      <button class="btn" style="font-size:11px;padding:3px 9px" onclick="openEdit(701)">✏️ Изменить задачу</button>
-    </div>
-  <div class="inline-edit" id="ie_701">
-    <div class="ie-row"><span class="ie-label">Название</span>
-      <input class="ie-input" id="ie_name_701" value="Сайт-проекты" onkeydown="if(event.key==='Enter')applyEdit(701)"></div>
-    <div class="ie-row"><span class="ie-label">Статус</span>
-      <select class="ie-select" id="ie_st_701"><option value="inprogress">🔄 In progress</option><option value="inbox" selected="">📥 Inbox</option><option value="plans">📋 Plans</option><option value="done">✔ Done</option></select></div>
-    <div class="ie-row"><span class="ie-label">Приоритет</span>
-      <select class="ie-select" id="ie_pr_701">
-        <option value="high" selected="">🔴 High</option>
-        <option value="medium">🟡 Medium</option>
-        <option value="low">⚪ Low</option>
-      </select></div>
-    <div class="ie-row"><span class="ie-label">Owner</span>
-      <select class="ie-select" id="ie_ow_701">
-        <option value="Manager">Manager</option>
-        <option value="Assistant" selected="">Assistant</option>
-        <option value="Both">Both</option>
-      </select></div>
-    <div class="ie-row"><span class="ie-label">Дедлайн</span>
-      <input class="ie-input" id="ie_dl_701" value="26 апр" placeholder="15 апр" onkeydown="if(event.key==='Enter')applyEdit(701)">
-      <label style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;cursor:pointer;flex-shrink:0">
-        <input type="checkbox" id="ie_hot_701" style="cursor:pointer"> горит
-      </label></div>
-    <div class="ie-actions">
-      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(701)">Сохранить</button>
-      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(701)">Удалить</button>
-      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(701)">Отмена</button>
+      <button class="btn primary" style="font-size:11px;padding:4px 12px" onclick="applyEdit(326)">Сохранить</button>
+      <button class="btn danger" style="font-size:11px;padding:4px 12px" onclick="delTask(326)">Удалить</button>
+      <button class="btn" style="font-size:11px;padding:4px 12px" onclick="cancelEdit(326)">Отмена</button>
     </div>
   </div>
   </div>
@@ -1421,7 +1421,7 @@ let TASKS = [
     "priority": "medium",
     "deadline": "",
     "deadlineHot": false,
-    "status": "inprogress",
+    "status": "inbox",
     "owner": "Assistant",
     "comment": "Работаем ИТЕРАЦИЯМИ: черновик (что-то хорошее выдал GPT) - выношу на обсуждение - после доработки полная версия",
     "subs": [
@@ -1526,9 +1526,9 @@ let TASKS = [
   {
     "id": 604,
     "name": "Сделать контент план писем (выставка в Шанхае)",
-    "priority": "medium",
-    "deadline": "26 апр",
-    "deadlineHot": false,
+    "priority": "high",
+    "deadline": "20 апр",
+    "deadlineHot": true,
     "status": "inprogress",
     "owner": "Assistant",
     "comment": "В письмах - дайджесты про новым продуктам (берем из нового списка СЗЛС) и ближе к дате выставки - приглашение к нам на стенд",
@@ -1562,10 +1562,10 @@ let TASKS = [
   {
     "id": 609,
     "name": "Дерево гипотез (когда нужен техтрансфер?)",
-    "priority": "medium",
+    "priority": "high",
     "deadline": "26 апр",
     "deadlineHot": false,
-    "status": "inbox",
+    "status": "inprogress",
     "owner": "Assistant",
     "comment": "Берем наш продуктовый лист и рос реестр с компаниями и зарегистрированными препаратами, смотрим у кого что зарегистрировано и когда заканчивается срок действия, потом прогоняем через иишку",
     "subs": [
@@ -1595,7 +1595,7 @@ let TASKS = [
     "priority": "high",
     "deadline": "26 апр",
     "deadlineHot": false,
-    "status": "inbox",
+    "status": "inprogress",
     "owner": "Assistant",
     "comment": "Делаем список гипотез и предложений на рынок, нам нужно быстро тестировать идеи и если выстрелит будем углубляться туда",
     "subs": [
